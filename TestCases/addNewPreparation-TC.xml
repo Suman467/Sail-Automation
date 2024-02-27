@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Add New Preparation Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="Add New Preparation  ">
+
+		<!--Sign-in Inputs -->
+		<parameter name="indexToSelectVessel" value="2" />
+		<parameter name="indexToSelectPort" value="1" />
+		<parameter name="viqGroup" value="Oil" />
+		
+		<parameter name="indexofPrepTable" value= "9"/>
+		
+ 
+
+		<classes>
+			<class name="com.sail.qa.TestCases.PreparationPageTest">
+				<methods>
+					 <include name="addNewPreparation" /> 
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

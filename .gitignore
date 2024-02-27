@@ -1,0 +1,11 @@
+target
+.metadata
+ScreenShot
+Reports
+logs
+.DS_Store
+test-output
+config
+test-groups
+
+
