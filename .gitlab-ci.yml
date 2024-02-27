@@ -10,7 +10,7 @@
 #- test
 #sast:
  # stage: test
-#include:
+#include:`
 #- template: Security/SAST.gitlab-ci.yml
 
 stages:
@@ -18,26 +18,22 @@ stages:
 
 variables:
   SUITE_1_PATH: "testSuites/01-sign-in-successful.xml"
-  # SUITE_2_PATH: "testSuites/09-Create_Preparation.xml"
-  # Add more suites as needed
 
-testSuites:
+testSuite1:
   stage: test
   script:
+    - echo "Setting up Java..."
+    - uses: actions/setup-java@v2
+      with:
+        distribution: "adopt"
+        java-version: "8"
+    - echo "Java version:"
+    - java -version
+    - echo "Setting execute permissions for mvnw..."
     - chmod +x mvnw
-    - ./mvnw test -Dsurefire.suiteXmlFiles=${SUITE_1_PATH} #,${SUITE_2_PATH}
-    # Add more suites using a comma-separated list
-
-  after_script:
-    - mvn clean verify  # Assuming you want to clean and verify the project after tests
-    - mvn dependency:purge-local-repository
-
+    - echo "Running TestNG Suites..."
+    - ./mvnw test -Dsurefire.suiteXmlFiles=${SUITE_1_PATH}
   artifacts:
     paths:
-      - target/           # Assuming this is where your build artifacts are generated
-      - .m2/repository/   # Include Maven repository if needed
-    expire_in: 1 week     # Adjust as needed based on your retention requirements
-
-  variables:
-    MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"  # Specify the Maven repository location
-    MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
+      - target/
+    expire_in: 1 week
