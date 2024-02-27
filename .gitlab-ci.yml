@@ -5,9 +5,36 @@
 # Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
 # Note that environment variables can be set in several places
 # See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+
+#stages:
+#- test
+#sast:
+ # stage: test
+#include:
+#- template: Security/SAST.gitlab-ci.yml
+
 stages:
-- test
-sast:
+  - test
+
+variables:
+  SUITE_1_PATH: "testSuites/01-sign-in-successfull.xml"
+  # SUITE_2_PATH: "testSuites/09-Create_Preparation.xml"
+  # Add more suites as needed
+
+testSuites:
   stage: test
-include:
-- template: Security/SAST.gitlab-ci.yml
+  script:
+    - chmod +x mvnw
+    - ./mvnw test -Dsurefire.suiteXmlFiles=${SUITE_1_PATH} #,${SUITE_2_PATH}
+    # Add more suites using a comma-separated list
+
+  after_script:
+    - mvn dependency:purge-local-repository
+
+  artifacts:
+    paths:
+      - target/
+      # Add any other paths you want to persist as artifacts
+
+  variables:
+    MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
