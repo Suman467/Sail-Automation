@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Admin Sign-in successfull And Generate Report">
+<suite-files>
+<!-- First run -->
+
+<suite-file path="./03-reports.xml"> </suite-file> 
+<suite-file path="./03-reportsWithFilters.xml"> </suite-file> 
+
+
+</suite-files>		
+</suite> <!-- Suite -->

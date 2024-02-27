@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Generate Report With Filters">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="Generate Report With Filters ">
+	<parameter name="currentYear" value="2024"/>	
+	 <parameter name="Location" value="Remote" /> 
+	 <parameter name="Location" value="In-port" />	
+	 <parameter name="reportYear" value ="2024"/>
+	
+
+
+		<classes>			
+			<class name="com.sail.qa.TestCases.InspectionReportWithFilters">
+				<methods>
+				    
+		            <include name="GenerateSireReportWithOwnerFilter"/>  
+				 	 					
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
