@@ -1,0 +1,48 @@
+name: 06 Supdt Report with Filters
+
+on:
+  workflow_dispatch:
+    inputs:
+      parameter_name:
+        description: 'Description of the parameter'
+        required: true
+
+jobs:
+  testSuites:
+    runs-on: ubuntu-latest
+
+    env:      
+      SUITE_1_PATH: testSuites/08-Supdt_Report_With_Filters.xml
+      # Add more suites as needed
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: "adopt"
+          java-version: "8"
+
+      - name: Set execute permissions for mvnw
+        run: |
+          chmod +x mvnw
+        working-directory: .  # Set to the root directory
+
+      - name: Run TestNG Suites
+        working-directory: .  # Set to the root directory
+        run: |
+          ./mvnw test -Dsurefire.suiteXmlFiles=${SUITE_1_PATH} 
+          # Add more suites using a comma-separated list
+
+      - name: Clear Maven Cache
+        run: |
+          mvn dependency:purge-local-repository
+
+      - name: Debug Information
+        run: |
+          echo "Current Directory: $(pwd)"
+          echo "Java Version: $(java -version)"
+          echo "Maven Version: $(mvn -version)"
+          ls -la
