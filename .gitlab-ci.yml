@@ -23,10 +23,13 @@ testSuite1:
   stage: test
   script:
     - echo "Setting up Java..."
-    - uses: actions/setup-java@v2
+    - |
+      echo "##[group] Installing Java"
+      uses: actions/setup-java@v2
       with:
         distribution: "adopt"
         java-version: "8"
+      echo "##[endgroup]"
     - echo "Java version:"
     - java -version
     - echo "Setting execute permissions for mvnw..."
