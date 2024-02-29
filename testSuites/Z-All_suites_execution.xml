@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Admin Sign-in successfull And Generate Report">
+<suite-files>
+<!-- First run -->
+
+<suite-file path="./04-External_Reports.xml"> </suite-file> 
+<suite-file path="./05-Internal_Reoprts.xml"> </suite-file>
+<suite-file path="./06-Report_With_Filters.xml"> </suite-file>
+<suite-file path="./07-All_Inspection_Summary_Reoprts.xml"> </suite-file>
+<suite-file path="./08-Inspection_Comparision_Reoprts.xml"> </suite-file>
+
+
+</suite-files>		
+</suite> <!-- Suite -->

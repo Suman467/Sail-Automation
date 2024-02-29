@@ -1,20 +1,13 @@
 package com.sail.qa.GeneratedReports;
 
 import java.awt.AWTException;
-import java.util.ArrayList;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.sail.qa.base.TestBase;
-import com.sail.qa.pages.GeneratedReport;
 import com.sail.qa.pages.InspectionSummaryReportPage;
-import com.sail.qa.pages.ReportFilterPage;
-import com.sail.qa.pages.ReportPage;
 
 public class InspectionReportOfAllInspectionSummary extends TestBase {
 

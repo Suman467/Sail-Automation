@@ -39,74 +39,96 @@ public class TestBase {
 	public static boolean smartScroll = true;
 	public static JavascriptExecutor jse = (JavascriptExecutor) TestBase.driver;
 	
-
 	@SuppressWarnings("deprecation")
-	@Parameters({ "browser", "execution" })
 	
+	@Parameters({ "browser", "execution" })
 	public void setup(String browser, @Optional() String execution) {
+	    log.info("*****************************************");
+	    log.info("------------AUTOMATION STARTED-----------");
+	    log.info("*****************************************");
+	    
+	   
 
-		log.info("*****************************************");
-		log.info("------------AUTOMATION STARTED-----------");
-		log.info("*****************************************");
-		boolean isHeadlessExecution = "headless".equals(execution);
+	    boolean isHeadlessExecution = "headless".equals(execution);
+	    ChromeOptions options = new ChromeOptions(); // Use a single instance of ChromeOptions
 
-		if (browser.equals("chrome")) {
-			String OS = System.getProperty("os.name").toLowerCase();
-			System.out.println("The OS is : " + OS);
+	    try {
+	        String OS = System.getProperty("os.name").toLowerCase();
+	        System.out.println("The OS is : " + OS);
+	        log.info("The OS is: " + OS);
 
-			if (OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS.indexOf("aix") > 0)
-				WebDriverManager.chromedriver().operatingSystem(OperatingSystem.LINUX).setup();
+	        if (browser.equalsIgnoreCase("chrome")) {
+	            setupChromeDriver(OS, isHeadlessExecution, options);
+	            log.info("Chrome driver is Initialized");
+	        } else if (browser.equalsIgnoreCase("firefox")) {
+	            WebDriverManager.firefoxdriver().setup();
+	            log.info("Firefox driver is Initialized");
+	        } else if (browser.equalsIgnoreCase("edge")) {
+	            setupEdgeDriver(OS, options);
+	            log.info("Edge driver is Initialized");
+	        } else {
+	            log.error("Invalid browser specified: " + browser);
+	            throw new IllegalArgumentException("Invalid browser specified: " + browser);
+	        }
 
-			else if (OS.indexOf("mac") >= 0)
-				WebDriverManager.chromedriver().operatingSystem(OperatingSystem.MAC).setup();
+	        // Common setup for all browsers
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	        driver.manage().deleteAllCookies();
+	        driver.manage().window().maximize();
+	        options.addArguments("--disable-cache");
+	        options.addArguments("--no-sandbox");
+	        
 
-			else
-				WebDriverManager.chromedriver().operatingSystem(OperatingSystem.WIN).setup();
-
-			ChromeOptions options = new ChromeOptions();
-			if (isHeadlessExecution)
-				options.addArguments("headless");
-			driver = new ChromeDriver(options);
-
-			log.info("Chrome driver is Initialized");
-		}
-
-		else if (browser.equals("firefox")) {
-
-			WebDriverManager.firefoxdriver().setup();
-			// FirefoxOptions options = new FirefoxOptions();
-			// options.setHeadless(true);
-			// driver = new FirefoxDriver();
-
-			log.info("Firefox driver is Initialized");
-		}
-		if (browser.equals("edge")) {
-			String OS = System.getProperty("os.name").toLowerCase();
-			System.out.println("The OS is : " + OS);
-
-			if (OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS.indexOf("aix") > 0)
-				WebDriverManager.edgedriver().operatingSystem(OperatingSystem.LINUX).setup();
-
-			else if (OS.indexOf("mac") >= 0)
-				WebDriverManager.edgedriver().operatingSystem(OperatingSystem.MAC).setup();
-
-			else
-				WebDriverManager.edgedriver().operatingSystem(OperatingSystem.WIN).setup();
-			EdgeOptions edgeOptions = new EdgeOptions();
-			// if (isHeadlessExecution)
-			// edgeOptions.addArguments("headless");
-			// WebDriver driver= new EdgeDriver(edgeOptions);
-			driver = new EdgeDriver(edgeOptions);
-			log.info("Edge driver is Initialized");
-		}
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
-		ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-cache");
-
+	    } catch (Exception e) {
+	        log.error("Error during setup", e);
+	        throw e;
+	    }
 	}
+
+	private void setupChromeDriver(String os, boolean isHeadlessExecution, ChromeOptions options) {
+	    if (os.contains("nix") || os.contains("nux") || os.contains("aix"))
+	        WebDriverManager.chromedriver().operatingSystem(OperatingSystem.LINUX).setup();
+	    
+	    else if (os.contains("mac"))
+	        WebDriverManager.chromedriver().operatingSystem(OperatingSystem.MAC).setup();
+	    else if (os.contains("win"))
+	        WebDriverManager.chromedriver().operatingSystem(OperatingSystem.WIN).setup();
+	        
+	   
+	    else {
+	        log.error("Unsupported operating system: " + os);
+	        throw new UnsupportedOperationException("Unsupported operating system: " + os);
+	    }
+	   // String chromeBinaryPath = "/c/Program Files/Google/Chrome/Application/chrome.exe";
+	    //System.setProperty("webdriver.chrome.driver", chromeBinaryPath);
+	    
+
+	    if (isHeadlessExecution)
+	        options.addArguments("headless");
+
+	    driver = new ChromeDriver(options);
+	}
+
+	private void setupEdgeDriver(String os, ChromeOptions options) {
+	    if (os.contains("nix") || os.contains("nux") || os.contains("aix"))
+	        WebDriverManager.edgedriver().operatingSystem(OperatingSystem.LINUX).setup();
+	    else if (os.contains("mac"))
+	        WebDriverManager.edgedriver().operatingSystem(OperatingSystem.MAC).setup();
+	    else if (os.contains("win")) {
+	        WebDriverManager.edgedriver().operatingSystem(OperatingSystem.WIN).setup();
+	    } else {
+	        log.error("Unsupported operating system: " + os);
+	        throw new UnsupportedOperationException("Unsupported operating system: " + os);
+	    }
+
+	    EdgeOptions edgeOptions = new EdgeOptions();
+	    driver = new EdgeDriver(edgeOptions);
+	    log.info("Edge driver is Initialized");
+	}
+	        
+	        
+	 
+	 
 	
 	
 

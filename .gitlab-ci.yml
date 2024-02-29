@@ -13,30 +13,56 @@
 #include:`
 #- template: Security/SAST.gitlab-ci.yml
 
+#image: maven:3.8.4-openjdk-11-slim
 stages:
   - test
 
 variables:
-  SUITE_1_PATH: "testSuites/01-sign-in-successful.xml"
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  testngTest: "testSuites/01-sign-in-successfull.xml"
 
-testSuite1:
+before_script:
+  - sudo apt-get update -qy
+  - sudo apt-get install -y maven
+
+test:
   stage: test
+  image: selenium/standalone-chrome:latest
   script:
-    - echo "Setting up Java..."
-    - |
-      echo "##[group] Installing Java"
-      uses: actions/setup-java@v2
-      with:
-        distribution: "adopt"
-        java-version: "8"
-      echo "##[endgroup]"
-    - echo "Java version:"
-    - java -version
-    - echo "Setting execute permissions for mvnw..."
-    - chmod +x mvnw
-    - echo "Running TestNG Suites..."
-    - ./mvnw test -Dsurefire.suiteXmlFiles=${SUITE_1_PATH}
-  artifacts:
-    paths:
-      - target/
-    expire_in: 1 week
+    #- mvn clean test -DsuiteXmlFile=testSuites/01-sign-in-successfull.xml
+    #- echo "TestNG Test Suite: ${testngTest}"
+    - mvn clean test -DsuiteXmlFile=${testngTest}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

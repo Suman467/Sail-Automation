@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -65,7 +66,7 @@ public class PreparationPageTest extends TestBase{
 	 */
 	@Parameters({"indexToSelectVessel","indexToSelectPort", "viqGroup","viqVersion"})
 	@Test
-	public void addNewPreparation(int indexToSelectVessel ,int indexToSelectPort, String viqGrp, String viqVersion) throws InterruptedException, TimeoutException
+	public void addNewPreparation(int indexToSelectVessel ,int indexToSelectPort, String viqGrp,@Optional String viqVersion) throws InterruptedException, TimeoutException
 	{
 		PreparationPage pp = new PreparationPage(driver);
 		Toaster toast = new Toaster(driver);
@@ -111,7 +112,7 @@ public class PreparationPageTest extends TestBase{
 		 clickElement(pp.selectViqVersion(viqVersion));
 		 log.info("VIQ Vesrion is selected");
 		 System.out.println("VIQ Vesrion is selected");       
-		
+		 getFluentWait();
 		 clickElement(pp.getViqGrp());	
 		 
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
