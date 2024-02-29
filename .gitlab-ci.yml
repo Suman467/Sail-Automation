@@ -10,6 +10,7 @@ stages:
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  testngTest: "testSuites/01-sign-in-successfull.xml"
 
 before_script:
   - sudo apt-get update -qy
@@ -19,4 +20,6 @@ test:
   stage: test
   image: selenium/standalone-chrome:latest
   script:
-    - mvn clean test -DsuiteXmlFile=testSuites/01-sign-in-successfull.xml
+    #- mvn clean test -DsuiteXmlFile=testSuites/01-sign-in-successfull.xml
+    #- echo "TestNG Test Suite: ${testngTest}"
+    - mvn clean test -DsuiteXmlFile=${testngTest}
