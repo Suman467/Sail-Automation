@@ -161,10 +161,12 @@ public class PreparationPageTest extends TestBase{
 		if(!totalActivePrepCountNew.equals (totalActivePrepCount))
 		{
 			System.out.println("Count is increased by 1");
+			System.out.println("Total prepataion cout after adding a new preparation : " +totalActivePrepCountNew);
 		}
 		else
 		{
 			System.out.println("Count is not increased");
+			System.out.println("Total prepataion cout after adding a new preparation : " +totalActivePrepCountNew);
 		}
 		
 	}
