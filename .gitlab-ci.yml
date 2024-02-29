@@ -15,18 +15,18 @@
 
 #image: maven:3.8.4-openjdk-11-slim
 stages:
-  - test
+  - PreparationSuite
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
-  testngTest: "testSuites/01-sign-in-successfull.xml"
+  testngTest: "testSuites/03-sign-in-addNewPreeparation.xml"
 
 before_script:
   - sudo apt-get update -qy
   - sudo apt-get install -y maven
 
-test:
-  stage: test
+CreatePreparation:
+  stage: PreparationSuite
   image: selenium/standalone-chrome:latest
   script:
     #- mvn clean test -DsuiteXmlFile=testSuites/01-sign-in-successfull.xml
