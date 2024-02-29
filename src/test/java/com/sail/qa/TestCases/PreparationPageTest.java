@@ -166,7 +166,7 @@ public class PreparationPageTest extends TestBase{
 		else
 		{
 			System.out.println("Count is not increased");
-			System.out.println("Total prepataion cout after adding a new preparation : " +totalActivePrepCountNew);
+			System.out.println("Total active prepataion count after adding a new preparation : " +totalActivePrepCountNew);
 		}
 		
 	}

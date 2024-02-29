@@ -15,17 +15,17 @@
 
 #image: maven:3.8.4-openjdk-11-slim
 stages:
-  - PreparationSuite
+  - ExternalReportSuite
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
-  testngTest: "testSuites/03-sign-in-addNewPreeparation.xml"
+  testngTest: "testSuites/04-External_Reports.xml"
 
 before_script:
   - sudo apt-get update -qy
   - sudo apt-get install -y maven
 
-CreatePreparation:
+ExternalReports:
   stage: PreparationSuite
   image: selenium/standalone-chrome:latest
   script:
