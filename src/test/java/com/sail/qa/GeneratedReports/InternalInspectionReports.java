@@ -138,7 +138,7 @@ public class InternalInspectionReports extends TestBase {
 			else if(getText(genRep.getReportText()).equals("NAVIGATION AUDIT - "+currentYear)) {			
 				
 				
-				
+				getFluentWait();
 				Assert.assertEquals(getText(genRep.getReportText()), "NAVIGATION AUDIT - "+currentYear);
 				System.out.println("Report Name : - " +getText(genRep.getReportText()));
 				log.info(getText(genRep.getReportText() )+  "is generated successfully");

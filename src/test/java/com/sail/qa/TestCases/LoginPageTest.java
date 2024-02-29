@@ -22,7 +22,7 @@ public class LoginPageTest extends TestBase {
 	@Parameters({"browser" , "execution", "URL","Email" ,"Password" ,"Domain"})
 	public void AdminLogin(String browser,@Optional() String execution,String URL , String Email , String Password, String Domain) throws IOException, InterruptedException
 	{
-		Thread.sleep(2000);
+		getFluentWait();
 		this.setup(browser, execution);
 		LoginPage login = new LoginPage(driver);
 		driver.get(URL);
