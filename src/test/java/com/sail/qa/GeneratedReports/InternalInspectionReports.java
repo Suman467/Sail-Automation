@@ -126,8 +126,8 @@ public class InternalInspectionReports extends TestBase {
 
 			js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView(true);", genRep.pageEndSupdtReoprt(pageEndIndex));
-			System.out.println("SUPERINTENDENT INSPECTION Report for 2023 has been generated successfully");
-			log.info("SUPERINTENDENT INSPECTION Report for 2023 has been generated successfully");
+			System.out.println("SUPERINTENDENT INSPECTION Report  has been generated successfully");
+			log.info("SUPERINTENDENT INSPECTION Report has been generated successfully");
 			
 			
 			
@@ -242,8 +242,8 @@ public class InternalInspectionReports extends TestBase {
 				js.executeScript("arguments[0].scrollIntoView(true);", genRep.getNavigationAuditFindingByMaster());
 				System.out.println("NAVIGATION AUDIT - Finding By Master data is visible");	
 				log.info("NAVIGATION AUDIT - Finding By Master data is visible");
-				System.out.println("NAVIGATION AUDIT Report for 2023 has been generated successfully");	
-				log.info("NAVIGATION AUDIT Report for 2023 has been generated successfully");		
+				System.out.println("NAVIGATION AUDIT Report  has been generated successfully");	
+				log.info("NAVIGATION AUDIT Report has been generated successfully");		
 
 		
 			}	
