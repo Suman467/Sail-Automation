@@ -26,11 +26,7 @@ before_script:
   - sudo apt-get install -y maven
 
 ExternalReports:
-<<<<<<< HEAD
   stage: InternalReportSuite
-=======
-  stage: ExternalReportSuite
->>>>>>> 3e9dc5b1fac996294400801e3d4049e62a145d35
   image: selenium/standalone-chrome:latest
   script:
     #- mvn clean test -DsuiteXmlFile=testSuites/01-sign-in-successfull.xml
