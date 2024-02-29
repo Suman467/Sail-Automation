@@ -6,18 +6,18 @@
 # Note that environment variables can be set in several places
 # See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 stages:
-  - SignInSuite
+  - PreparationSuite
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
-  testngTest: "testSuites/01-sign-in-successfull.xml"
+  testngTest: "testSuites/03-sign-in-addNewPreeparation.xml"
 
 before_script:
   - sudo apt-get update -qy
   - sudo apt-get install -y maven
 
-test:
-  stage: SignInSuite
+CreatePreparation:
+  stage: PreparationSuite
   image: selenium/standalone-chrome:latest
   script:
     #- mvn clean test -DsuiteXmlFile=testSuites/01-sign-in-successfull.xml
