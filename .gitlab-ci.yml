@@ -19,7 +19,7 @@ stages:
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
-  testngTest: "testSuites/08-Sire_Report_With_Location_Filters.xml"
+  testngTest: "testSuites/09-Sire_Report_With_VIQchapter_Filters.xml"
 
 before_script:
   - sudo apt-get update -qy
