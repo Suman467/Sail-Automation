@@ -172,7 +172,7 @@ public class InspectionReportWithFilters extends TestBase {
 			getFluentWait();
 
 			switchTab.switchToNewTab();
-			getFluentWait();
+			Thread.sleep(2000);
 			System.out.println(getText(genRep.getFilterApplied()));
 			log.info(getText(genRep.getFilterApplied()));
 			externalInsp.GeneratedExternalInspectionReport(currentYear);			
@@ -242,6 +242,7 @@ public class InspectionReportWithFilters extends TestBase {
 			getFluentWait();
 
 			switchTab.switchToNewTab();
+			Thread.sleep(2000);
 			
 			System.out.println(getText(genRep.getFilterApplied()));
 			log.info(getText(genRep.getFilterApplied()));
@@ -303,6 +304,7 @@ public class InspectionReportWithFilters extends TestBase {
 			getFluentWait();
 
 			switchTab.switchToNewTab();
+			Thread.sleep(3000);
 			
 			System.out.println(getText(genRep.getFilterApplied()));
 			log.info(getText(genRep.getFilterApplied()));
@@ -374,6 +376,7 @@ public class InspectionReportWithFilters extends TestBase {
 			getFluentWait();
 
 			switchTab.switchToNewTab();
+			Thread.sleep(3000);
 			
 			System.out.println(getText(genRep.getFilterApplied()));
 			getFluentWait();
@@ -468,7 +471,7 @@ public class InspectionReportWithFilters extends TestBase {
 			getFluentWait();
 
 			switchTab.switchToNewTab();
-			
+			Thread.sleep(3000);
 			System.out.println(getText(genRep.getFilterApplied()));
 			extInspReport.GenerateInternalInspectionReport(pageEndIndex, currentYear);
 			
@@ -532,7 +535,7 @@ public class InspectionReportWithFilters extends TestBase {
 			
 			
 			switchTab.switchToNewTab();
-				
+			Thread.sleep(3000);	
 			externalInsp.GeneratedObservationStatusReport(currentYear);
 			
 			closeTAb.closeTab();	
