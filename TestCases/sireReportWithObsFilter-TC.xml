@@ -9,8 +9,9 @@
 
 	<test name="Generate Report With Filters ">
 	<parameter name="currentYear" value="2024"/>	
-	 <parameter name="reportYear" value ="2024"/>
+	 
 	 <parameter name="obsStatus" value="Open"/>
+	 <parameter name="reportYear" value ="2024"/>
 	
 
 

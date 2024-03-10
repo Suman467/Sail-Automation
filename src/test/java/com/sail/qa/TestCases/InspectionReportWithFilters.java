@@ -410,6 +410,7 @@ public class InspectionReportWithFilters extends TestBase {
 			js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", report.selectYear(reportYear));
 			
+			getFluentWait();	
 			System.out.println("\n***************Supdt. Inspection Report Location and Port Filter ***************\n");
 			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 			jsExecutor.executeScript("arguments[0].click();", report.getSupdtInspection());
@@ -481,14 +482,12 @@ public class InspectionReportWithFilters extends TestBase {
 
 		}
 		
-		
-		
-		@Parameters({"currentYear", "reportYear", "obsStatus"})
+	
+		@Parameters({"currentYear", "obsStatus","reportYear", })
 		@Test
-		public void GenerateSireReportWithObsStatusFilter(int currentYear , int reportYear, String obsStatus ) throws InterruptedException, AWTException {
+		public void GenerateSireReportWithObsStatusFilter(int currentYear ,String obsStatus,int reportYear) throws InterruptedException, AWTException {
 			
-			ReportPage report = new ReportPage(driver);			
-			
+			ReportPage report = new ReportPage(driver);
 			ReportFilterPage filter = new ReportFilterPage(driver);
 			
 			report.getRefreshIcon();
@@ -497,41 +496,39 @@ public class InspectionReportWithFilters extends TestBase {
 			getFluentWait();
 			
             clickElement(report.getClearBtn());		
-            getFluentWait();	
+            getFluentWait();
 			clickElement(report.getYearDrpDown());
 			js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", report.selectYear(reportYear));
 			
-			getFluentWait();			
+			getFluentWait();					
 			
-			System.out.println("\n***************SIRE Inspection Report With Open Status Filter ***************\n");
+			System.out.println("\n***************SIRE Inspection Report With Observation Status Filter ***************\n");
 			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 			jsExecutor.executeScript("arguments[0].click();", report.getSire());
 			
 			log.info("SIRE inspection has been selected on the report page");
 			System.out.println("SIRE inspection has been selected on the report page");
 			
-			getFluentWait();
-			//clickElement(filter.getObsStatusArrow());
-			js.executeScript("arguments[0].click();", filter.getObsStatusArrow());
+			Thread.sleep(2000);
+			jsExecutor.executeScript("arguments[0].click();", filter.getObsStatusArrowIcon());
 			log.info("Observation status filter button has been clicked");
 			System.out.println("Observation status filter button has been clicked");		
 			
-			filter.obsStatus(obsStatus);
+			filter.obsStatus(obsStatus).click();;
 			System.out.println("Observation status is selected");
-			log.info("Observation status is selected");
-			getFluentWait();	
+			log.info("Observation status is selected");		
 			
-			clickElement(report.getEditSireIcon());
-			System.out.println("Edit icon is clciked next to sire");
 			
-			clickElement(report.getAllObsCheckBox());
-			System.out.println("All observation checkbox in selected");
+			Thread.sleep(2000);
 			
-			clickElement(report.getGenerateBtton());
+			jsExecutor.executeScript("arguments[0].click();", report.getGenerateBtton());
+			//clickElement(report.getGenerateBtton());
 			System.out.println("Generate button is clicked");
 			log.info("Generate button has been clicked on the report page");
-			getFluentWait();
+			
+			
+			
 			
 			
 			switchTab.switchToNewTab();

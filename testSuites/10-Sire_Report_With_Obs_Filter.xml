@@ -4,7 +4,7 @@
 <suite-files>
 <suite-file path="./TestCases/adminSignIn-TC.xml"></suite-file>
 <suite-file path="./TestCases/reportPage-TC.xml"></suite-file>
-<suite-file path="./TestCases/sireInspectionReportWithObsFilter-TC.xml"></suite-file>
+<suite-file path="./TestCases/sireReportWithObsFilter-TC.xml"></suite-file>
 <suite-file path="./TestCases/tearDown-TC.xml"></suite-file> 
 	
 </suite-files>		

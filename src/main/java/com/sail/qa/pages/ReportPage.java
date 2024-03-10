@@ -160,7 +160,8 @@ public class ReportPage {
 	@FindBy(xpath="//div[normalize-space()='All Observation']")
 	WebElement allObsCheckBox;
 	
-	@FindBy(xpath="//div[@class='row ng-star-inserted']//a[@class='generate-btn'][normalize-space()='Generate']")
+	//@FindBy(xpath="//div[@class='row ng-star-inserted']//a[@class='generate-btn'][normalize-space()='Generate']")
+	@FindBy(xpath="//a[normalize-space()='Generate']")
 	WebElement generateBtton;
 
 	public WebElement getAllObsCheckBox() {

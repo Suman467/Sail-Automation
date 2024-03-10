@@ -184,14 +184,24 @@ public class ReportFilterPage {
 		  return selectLocation; 
 		  
 		  }
-	  
-	  @FindBy(xpath="//div[@class='mat-form-field-infix ng-tns-c67-126']")
-	  WebElement obsStatusArrow;
+	  /*
+	  @FindBy(xpath="(//mat-select[@formcontrolname='status']//following::div[2])[1]")
+	  WebElement obsStatusArrowIcon;
 
-	public WebElement getObsStatusArrow() {
-		return obsStatusArrow;
+	public WebElement getObsStatusArrowIcon() {
+		return obsStatusArrowIcon;
 	}
 	
+	*/
+	  
+	  @FindBy(xpath="(//mat-select[@formcontrolname='status']//following::div[2])[1]")
+	  WebElement obsStatusArrowIcon;
+	
+	public WebElement getObsStatusArrowIcon() {
+		return obsStatusArrowIcon;
+	}
+
+
 	public WebElement obsStatus(String obsStatus) {
 	    WebElement obs_Status = ldriver.findElement(By.xpath("//span[@class='mat-option-text'][normalize-space()='" + obsStatus + "']"));
 	    return obs_Status;
