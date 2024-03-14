@@ -21,13 +21,13 @@ public class InspectionComparisonReport extends TestBase {
 
 	public JavascriptExecutor js;
 
-	public void InspectionComaprision() throws InterruptedException, AWTException {
+	public void InspectionComaprision(int reportYear) throws InterruptedException, AWTException {
 			
 			InspectionSummaryReportPage inspRep = new InspectionSummaryReportPage(driver);
 			InspectionComparisionReportPage inspComparision = new InspectionComparisionReportPage(driver);
 			
 			
-			Assert.assertEquals(getText(inspComparision.getInspComparison()), "INSPECTION COMPARISON - 2023");
+			Assert.assertEquals(getText(inspComparision.getInspComparison()), "INSPECTION COMPARISON - "+reportYear);
 			System.out.println("Report Name : - " +getText(inspComparision.getInspComparison()));
 			System.out.println(getText(inspComparision.getReportFilter()));
 			getFluentWait();

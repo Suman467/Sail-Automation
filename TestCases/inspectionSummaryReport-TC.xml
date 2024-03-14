@@ -8,16 +8,21 @@
 	</listeners>
 
 	<test name="Generate Report  ">
+	
+	
+	<parameter name ="reportYear" value = "2024"/> 
+	<parameter name ="currentYear" value = "2024"/> 
 
 
 		<classes>		
 			<class name="com.sail.qa.TestCases.AllInspectionSummaryReport">
 				<methods>
 				     <include name="GenerateSireInspectionSummaryReport"/>
-				     <include name="GeneratePscInspectionSummaryReport"/>
-				     <include name= "GenerateSupdtInspectionSummaryReport"/>
+			 	     <include name="GeneratePscInspectionSummaryReport"/>
+				     <include name= "GenerateSupdtInspectionSummaryReport"/>				      
 				     <include name= "GenerateSireObservationReport"/>
 				     <include name= "GeneratePscObservationReport"/>
+				    
 				</methods>
 			</class>
 		</classes>

@@ -31,7 +31,7 @@ public class InspectionSummaryReportPage {
 		WebElement allObservationCheckBox;
 		
 		
-		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[7]")
+		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[9]")
 		WebElement internalInspectionAllCheckBox;
 		
 		@FindBy(xpath="//span[normalize-space()='Supdt. Inspection']")
@@ -49,18 +49,18 @@ public class InspectionSummaryReportPage {
 		@FindBy(xpath="//span[normalize-space()='Bunkering Audit']")
 		WebElement bunkeringAuditCheckBox;
 		
-		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[19]")
+		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[21]")
 		WebElement externalInspAllCheckBox;
 		
 		
-		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[20]")
+		@FindBy(xpath="(//div[@class='mat-checkbox-inner-container'])[22]")
 		WebElement sireCheckBox ;
 		
 		
-		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[22]")
+		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[24]")
 		WebElement cdiCheckBox ;
 		
-		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[24]")
+		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[26]")
 		WebElement pscCheckBox ;
 		
 		
@@ -211,5 +211,28 @@ public class InspectionSummaryReportPage {
 		}
 
 	
+		@FindBy(xpath="//div[@class='my-modal-content']//p//b")
+		WebElement popUp;
+		
+				@FindBy(xpath="//i[contains(text(),'To generate \"Selected Obs Export\" please make row ')]")
+		WebElement selectObsText;
+		
+		@FindBy(xpath="//span[@aria-hidden='true']")
+		WebElement xBtn;
+		
+		public WebElement getPopUp() {
+			return popUp;
+		}
+
+
+		public WebElement getSelectObsText() {
+			return selectObsText;
+		}
+
+
+		public WebElement getxBtn() {
+			return xBtn;
+		}
+		
 
 	}

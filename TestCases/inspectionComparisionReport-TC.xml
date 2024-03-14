@@ -9,15 +9,17 @@
 
 	<test name="Generate Report  ">
 	
-	 <parameter name="Year" value="2023" />  
+	 <parameter name="reportYear" value="2023" />  
 
 
 		<classes>		
 			<class name="com.sail.qa.TestCases.InspectionComparisionReport">
 				<methods>
-				     <include name="generateExcludingThirdParty"/>
-				     <include name="generateIncludingThirdParty"/>
-				     <include name= "generateSeprateThirdParty"/>
+				     <include name="GenerateExcludingThirdParty"/>
+				      <include name="GenerateIncludingThirdParty"/>
+				      <include name= "GenerateSeprateThirdParty"/>
+				     
+				     
 				</methods>
 			</class>
 		</classes>

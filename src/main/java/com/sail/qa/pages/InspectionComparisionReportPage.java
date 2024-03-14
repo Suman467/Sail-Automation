@@ -99,8 +99,59 @@ public class InspectionComparisionReportPage {
 		}
 
 
-
 		
+		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[21]")
+		WebElement sireCheckBox;
+		
+		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[23]")
+		WebElement cdiCheckBox;
+		
+		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[25]")
+		WebElement pscCheckBox;
+		
+		@FindBy(xpath="//span[normalize-space()='Navigation Audit']")
+		WebElement navigationAuditCheckBox;
+		
+		@FindBy(xpath="//span[normalize-space()='Cargo Audit']")
+		WebElement cargoAuditCheckBox;
+		
+		@FindBy(xpath="//span[normalize-space()='Mooring Audit']")
+		WebElement mooringAuditCheckBox;
+		
+		@FindBy(xpath="//span[normalize-space()='Bunkering Audit']")
+		WebElement bunkeringAuditCheckBox;
+		
+
+
+		public WebElement getSireCheckBox() {
+			return sireCheckBox;
+		}
+
+		public WebElement getCdiCheckBox() {
+			return cdiCheckBox;
+		}
+
+		public WebElement getPscCheckBox() {
+			return pscCheckBox;
+		}
+
+		public WebElement getNavigationAuditCheckBox() {
+			return navigationAuditCheckBox;
+		}
+
+		public WebElement getCargoAuditCheckBox() {
+			return cargoAuditCheckBox;
+		}
+
+		public WebElement getMooringAuditCheckBox() {
+			return mooringAuditCheckBox;
+		}
+
+		public WebElement getBunkeringAuditCheckBox() {
+			return bunkeringAuditCheckBox;
+		}
+
+
 	
 
 	}

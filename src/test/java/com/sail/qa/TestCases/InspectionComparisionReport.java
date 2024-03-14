@@ -22,68 +22,87 @@ public class InspectionComparisionReport extends TestBase {
 	
 	
 		
-		
+	    @Parameters({"reportYear"})
 		@Test
-		public void GenerateinspectionComparisionReport() throws InterruptedException, AWTException {
+		public void GenerateInspectionComparisionReport(int reportYear) throws InterruptedException, AWTException {
 			
 			ReportPage report = new ReportPage(driver);
-			InspectionSummaryReportPage inspReport = new InspectionSummaryReportPage(driver);
 			InspectionComparisionReportPage inspComp = new InspectionComparisionReportPage(driver);
 			
 			
+			
+			report.getRefreshIcon();
 			getFluentWait();
-			clickElement(report.getRefreshIcon());
+			driver.navigate().refresh();
 			getFluentWait();
-			System.out.println("\n***************Inspection Comparision Report***************\n");
+			
+            clickElement(report.getClearBtn());		
+            getFluentWait();
+			clickElement(report.getYearDrpDown());
+			js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", report.selectYear(reportYear));
+			
+			
+			getFluentWait();
+			
 			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 			jsExecutor.executeScript("arguments[0].click();", inspComp.getInspcComparisionCheckBox());
 
 			log.info("Inspection Comparision Checkbox is selected");
 			System.out.println("Inspection Comparision Checkbox is selected on the report page");
-			Thread.sleep(2000);
 			
-			clickElement(inspReport.getSireCheckBox());
+			getFluentWait();
+			clickElement(inspComp.getSireCheckBox());
 			log.info("SIRE external inspection checkbox is selected");
 			System.out.println("SIRE  inspection checkbox is selected on the report page");
+			getFluentWait();
 			
-			clickElement(inspReport.getCdiCheckBox());
+			clickElement(inspComp.getCdiCheckBox());
 			log.info("CDI external inspection checkbox is selected");
 			System.out.println("CDI inspection checkbox is selected on the report page");
+			getFluentWait();
 			
-			clickElement(inspReport.getPscCheckBox());
+			clickElement(inspComp.getPscCheckBox());
 			log.info("PSC external inspection checkbox is selected");
 			System.out.println("PSC inspection checkbox is selected on the report page");
+			getFluentWait();
 			
-			clickElement(inspReport.getNavigationAuditCheckBox());
+			jsExecutor.executeScript("arguments[0].click();", inspComp.getNavigationAuditCheckBox());
 			log.info("NAVIGATION AUDIT  inspection checkbox is selected");
 			System.out.println("NAVIGATION AUDIT  inspection checkbox is selected on the report page");
+			getFluentWait();
 			
-			clickElement(inspReport.getCargoAuditCheckBox());
+			clickElement(inspComp.getCargoAuditCheckBox());
 			log.info("CARGO AUDIT  inspection checkbox is selected");
 			System.out.println("CARGO AUDIT  inspection checkbox is selected on the report page");
+			getFluentWait();
 			
-			clickElement(inspReport.getMooringAuditCheckBox());
+			clickElement(inspComp.getMooringAuditCheckBox());
 			log.info("MOORING AUDIT  inspection checkbox is selected");
 			System.out.println("MOORING AUDIT  inspection checkbox is selected on the report page");
+			getFluentWait();
 			
-			clickElement(inspReport.getBunkeringAuditCheckBox());
+			clickElement(inspComp.getBunkeringAuditCheckBox());
 			log.info("BUNKERING AUDIT inspection checkbox is selected");
 			System.out.println("BUNKERING AUDIT inspection checkbox is selected on the report page");	
-			
+			getFluentWait();
 			
 			
 
 		}	
-		
+	    @Parameters({"reportYear"})
 		@Test
-		public void generateExcludingThirdParty() throws InterruptedException, AWTException
+		public void GenerateExcludingThirdParty(int reportYear) throws InterruptedException, AWTException
 		{
 			
 			ReportPage report = new ReportPage(driver);
 			InspectionComparisionReportPage inspComp = new InspectionComparisionReportPage(driver);
 			
-			GenerateinspectionComparisionReport();
-			clickElement(inspComp.getExcludeRadioBtn());
+			GenerateInspectionComparisionReport(reportYear);
+			getFluentWait();
+			js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", inspComp.getExcludeRadioBtn());
+			//clickElement(inspComp.getExcludeRadioBtn());
 			log.info("Exclude Radio Button is selected");
 			System.out.println("Exclude Radio Button is selected on the report page");	
 			
@@ -93,28 +112,32 @@ public class InspectionComparisionReport extends TestBase {
 			System.out.println("Generate button has been clicked on the report page");
 			getFluentWait();
 			switchTab.switchToNewTab();
-			
-			inspCom.InspectionComaprision();		
+			System.out.println("\n***************Inspection Comparision Report With Exculde 3RD PARTY***************\n");
+			inspCom.InspectionComaprision(reportYear);		
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();
 		}
 		
 		
-		@Parameters({"Year"})
+	    @Parameters({"reportYear"})
 		@Test
-		public void generateIncludingThirdParty(String year) throws InterruptedException, AWTException
+		public void GenerateIncludingThirdParty(int reportYear) throws InterruptedException, AWTException
 		{
 			ReportPage report = new ReportPage(driver);
 			InspectionComparisionReportPage inspComp = new InspectionComparisionReportPage(driver);
-			ReportFilterPage filter = new ReportFilterPage(driver);
-			
-			clickElement(filter.getClearBtn());
-			log.info("Clear button is pressed");
-			clickElement(filter.getYear());
-			clickElement(filter.selectYear(year));
+			report.getRefreshIcon();
+			getFluentWait();
+			driver.navigate().refresh();
 			getFluentWait();
 			
-			GenerateinspectionComparisionReport();
+            clickElement(report.getClearBtn());		
+            getFluentWait();
+			clickElement(report.getYearDrpDown());
+			js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", report.selectYear(reportYear));
+			getFluentWait();
+			
+			GenerateInspectionComparisionReport(reportYear);
 			clickElement(inspComp.getIncludeRadioBtn());
 			log.info("Include Radio Button is selected");
 			System.out.println("Include Radio Button is selected on the report page");	
@@ -125,29 +148,32 @@ public class InspectionComparisionReport extends TestBase {
 			System.out.println("Generate button has been clicked on the report page");
 			getFluentWait();
 			switchTab.switchToNewTab();
-			
-			inspCom.InspectionComaprision();		
+			System.out.println("\n***************Inspection Comparision Report With Include 3RD PARTY***************\n");
+			inspCom.InspectionComaprision(reportYear);		
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();
 		}
 		
-		@Parameters({"Year"})
+		@Parameters({"reportYear"})
 		@Test
-		public void generateSeprateThirdParty(String year) throws InterruptedException, AWTException
+		public void GenerateSeprateThirdParty(int  reportYear) throws InterruptedException, AWTException
 		{
 		
 			ReportPage report = new ReportPage(driver);
-			ReportFilterPage filter = new ReportFilterPage(driver);
-			
-			
 			InspectionComparisionReportPage inspComp = new InspectionComparisionReportPage(driver);
-			clickElement(filter.getClearBtn());
-			log.info("Clear button is pressed");
-			clickElement(filter.getYear());
-			clickElement(filter.selectYear(year));
+			report.getRefreshIcon();
+			getFluentWait();
+			driver.navigate().refresh();
 			getFluentWait();
 			
-			GenerateinspectionComparisionReport();
+            clickElement(report.getClearBtn());		
+            getFluentWait();
+			clickElement(report.getYearDrpDown());
+			js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", report.selectYear(reportYear));
+			getFluentWait();
+			
+			GenerateInspectionComparisionReport(reportYear);
 			clickElement(inspComp.getSeprateRadioBtn());
 			log.info("Seprate Radio Button is selected");
 			System.out.println("Seprate Radio Button is selected on the report page");	
@@ -158,8 +184,8 @@ public class InspectionComparisionReport extends TestBase {
 			System.out.println("Generate button has been clicked on the report page");
 			getFluentWait();
 			switchTab.switchToNewTab();
-			
-			inspCom.InspectionComaprision();		
+			System.out.println("\n***************Inspection Comparision Report With Separate 3RD PARTY***************\n");
+			inspCom.InspectionComaprision(reportYear);		
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();
 		}
