@@ -25,7 +25,7 @@ before_script:
   - sudo apt-get update -qy
   - sudo apt-get install -y maven
 
-ExternalReports:
+InspectionSummaryReports:
   stage: Test
   image: selenium/standalone-chrome:latest
   script:
