@@ -159,7 +159,7 @@ public class InspectionReportOfAllInspectionSummary extends TestBase {
 				System.out.println("The pop-up stats -  NOTE: "+getText(inspRep.getSelectObsText()));
 				clickElement(inspRep.getxBtn());
 				System.out.println("Pop-up closed");
-				
+				getFluentWait();
 				if(getText(inspRep.getReportTitle()).equals("SIRE INSPECTION - "+currentYear))
 					
 				{
@@ -182,6 +182,7 @@ public class InspectionReportOfAllInspectionSummary extends TestBase {
 				
 				
 				else if(getText(inspRep.getReportTitle()).equals("PSC INSPECTION - "+currentYear)) {	
+					getFluentWait();
 			
 	        
 				Assert.assertEquals(getText(inspRep.getReportTitle()), "PSC INSPECTION - "+currentYear);
