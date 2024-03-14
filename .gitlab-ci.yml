@@ -19,13 +19,13 @@ stages:
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
-  testngTest: "testSuites/13-All_Inspection_Summary_Reoprts.xml"
+  testngTest: "testSuites/14-All_Observation_Reoprts.xml"
 
 before_script:
   - sudo apt-get update -qy
   - sudo apt-get install -y maven
 
-InspectionSummaryReports:
+AllObservationReport:
   stage: Test
   image: selenium/standalone-chrome:latest
   script:
