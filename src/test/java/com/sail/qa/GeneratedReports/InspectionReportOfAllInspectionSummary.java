@@ -150,7 +150,7 @@ public class InspectionReportOfAllInspectionSummary extends TestBase {
 				
 				InspectionSummaryReportPage inspRep = new InspectionSummaryReportPage(driver);
 				
-				
+				getFluentWait();
 				Assert.assertTrue(inspRep.getPopUp().isDisplayed());
 				System.out.println("Pop-up is apperaing");
 				getFluentWait();
@@ -159,7 +159,7 @@ public class InspectionReportOfAllInspectionSummary extends TestBase {
 				System.out.println("The pop-up stats -  NOTE: "+getText(inspRep.getSelectObsText()));
 				clickElement(inspRep.getxBtn());
 				System.out.println("Pop-up closed");
-				getFluentWait();
+				Thread.sleep(2000);
 				if(getText(inspRep.getReportTitle()).equals("SIRE INSPECTION - "+currentYear))
 					
 				{
