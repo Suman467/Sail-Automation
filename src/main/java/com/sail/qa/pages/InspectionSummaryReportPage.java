@@ -60,7 +60,7 @@ public class InspectionSummaryReportPage {
 		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[24]")
 		WebElement cdiCheckBox ;
 		
-		@FindBy(xpath="(//span[@class='mat-checkbox-label'])[26]")
+		@FindBy(xpath="(//div[@class='mat-checkbox-inner-container'])[26]")
 		WebElement pscCheckBox ;
 		
 		

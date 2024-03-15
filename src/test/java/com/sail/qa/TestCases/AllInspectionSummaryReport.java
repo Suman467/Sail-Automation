@@ -128,6 +128,7 @@ public class AllInspectionSummaryReport extends TestBase {
 			InspectionSummaryReportPage inspReport = new InspectionSummaryReportPage(driver);
 			InspectionReportOfAllInspectionSummary inspSummaryRpt= new InspectionReportOfAllInspectionSummary(); 
 			
+			getFluentWait();
 			report.getRefreshIcon();
 			getFluentWait();
 			driver.navigate().refresh();
@@ -158,6 +159,7 @@ public class AllInspectionSummaryReport extends TestBase {
 			getFluentWait();
 			switchTab.switchToNewTab();
 			Thread.sleep(3000);
+			
 			inspSummaryRpt.InspectionSummary(currentYear);		
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();
@@ -239,10 +241,11 @@ public class AllInspectionSummaryReport extends TestBase {
 			log.info("All Inspection Summary Checkbox is selected");
 			System.out.println("All Inspection Summary Checkbox is selected on the report page");
 			
-			
+			Thread.sleep(1000);
 			clickElement(inspReport.getAllObservationCheckBox());
 			System.out.println("All Observation check box is selected");
-			getFluentWait();
+			
+			Thread.sleep(2000);
 			clickElement(inspReport.getSireCheckBox());
 			log.info("SIRE external inspection checkbox is selected");
 			System.out.println("SIRE external inspection checkbox is selected on the report page");
@@ -290,7 +293,7 @@ public class AllInspectionSummaryReport extends TestBase {
 			
 			clickElement(inspReport.getAllObservationCheckBox());
 			System.out.println("All Observation check box is selected");
-			
+			Thread.sleep(2000);
 			clickElement(inspReport.getPscCheckBox());
 			log.info("PSC external inspection checkbox is selected");
 			System.out.println("PSC external inspection checkbox is selected on the report page");
