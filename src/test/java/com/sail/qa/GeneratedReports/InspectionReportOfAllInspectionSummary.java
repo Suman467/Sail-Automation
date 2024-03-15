@@ -159,7 +159,8 @@ public class InspectionReportOfAllInspectionSummary extends TestBase {
 				System.out.println("The pop-up stats -  NOTE: "+getText(inspRep.getSelectObsText()));
 				clickElement(inspRep.getxBtn());
 				System.out.println("Pop-up closed");
-				Thread.sleep(2000);
+				Thread.sleep(3000);
+				
 				if(getText(inspRep.getReportTitle()).equals("SIRE INSPECTION - "+currentYear))
 					
 				{
