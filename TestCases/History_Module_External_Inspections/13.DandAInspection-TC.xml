@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="D and A Inspection Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="D and A Inspection Suite">
+
+		<!--Sign-in Inputs -->
+		
+ 
+       <parameter name = "vesselName" value="Antonis I. Angelicoussis"/>
+       <parameter name = "portIndex" value= "6"/>
+       <parameter name="inspStatus" value="Done"/>
+      
+       
+       
+        <parameter name= "inspectionName" value="D &amp; A"/>   
+
+
+       
+      
+
+		<classes>
+		
+		<class name="com.sail.qa.TestCases.HistoryPageCommonMenthods">
+				<methods>
+					<include name="VerifyHistoryPage" />	 	
+				</methods>
+			</class>
+		
+		
+			<class name="com.sail.qa.TestCases.ExternalInspectionsRecord">
+				<methods>
+					
+					<include name="AddNewDandARecordWithObservation"/> 
+				 	
+				</methods>
+			</class>
+		 
+		
+			
+			
+		
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

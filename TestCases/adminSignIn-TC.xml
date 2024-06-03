@@ -14,12 +14,12 @@
 
 
 
-       	<parameter name="execution" value="headless" />       
+        <!--   	<parameter name="execution" value="headless" />       --> 
 	    <parameter name="browser" value="chrome" />
-		<parameter name="URL" value="https://dev.sl-sail.com/" />
+		<parameter name="URL" value="https://dev2.sl-sail.com/" />
 		<parameter name="Email" value="support@sl-sail.com" />
-		<parameter name="Password" value="sl@34jh@34$r%" />
-		<parameter name="Domain" value="Wah Kwong" />
+		<parameter name="Password" value=" sl@34jh@34$r%" />
+		<parameter name="Domain" value="Marantanker" />
 
 		<classes>
 			<class name="com.sail.qa.TestCases.LoginPageTest">

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="SIRE TRIAL Inspection Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="SIRE TRIAL Inspection Suite">
+
+		<!--Sign-in Inputs -->
+ 
+       <parameter name = "vesselName" value="Antonis I. Angelicoussis"/>
+       <parameter name = "portIndex" value= "5"/>
+       <parameter name = "oilMajorIndex" value= "6"/>
+       <parameter name="indexToSelectInspector" value="7"/>
+       <parameter name= "viqRef1" value="2.3.5"/>
+       <parameter name= "viqRef2" value="2.6.3"/>
+       <parameter name= "viqRef3" value="3.2.1"/>
+       <parameter name="QuestionCatogery" value="Human"/>
+       <parameter name="quesCatS" value="HM"/>
+       <parameter name="indexToSelectSOCvalue" value="4"/>
+       <parameter name="quesCatN" value="HM"/>
+       <parameter name="indexToSelectNOC" value="3"/>
+       
+        <parameter name= "inspectionName" value="SIRE-TRIAL"/>
+       
+
+
+       
+      
+
+		<classes>
+		
+		<class name="com.sail.qa.TestCases.HistoryPageCommonMenthods">
+				<methods>
+					<include name="VerifyHistoryPage" />	 	
+				</methods>
+			</class>
+		
+		
+			<class name="com.sail.qa.TestCases.ExternalInspectionsRecord">
+				<methods>
+					
+					<include name="AddNewSireTrialRecordWithObservation"/> 
+				 	
+				</methods>
+			</class>
+		 
+		
+			
+			
+		
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

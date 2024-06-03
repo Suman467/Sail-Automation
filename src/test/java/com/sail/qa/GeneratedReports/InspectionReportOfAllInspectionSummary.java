@@ -159,7 +159,7 @@ public class InspectionReportOfAllInspectionSummary extends TestBase {
 				System.out.println("The pop-up stats -  NOTE: "+getText(inspRep.getSelectObsText()));
 				clickElement(inspRep.getxBtn());
 				System.out.println("Pop-up closed");
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 				
 				if(getText(inspRep.getReportTitle()).equals("SIRE INSPECTION - "+currentYear))
 					
@@ -176,14 +176,11 @@ public class InspectionReportOfAllInspectionSummary extends TestBase {
 				getFluentWait();
 				System.out.println("SIRE Inspection All Observation Report has been generated successfully");
 				
-				}
-				
-				
-				
+				}	
 				
 				
 				else if(getText(inspRep.getReportTitle()).equals("PSC INSPECTION - "+currentYear)) {	
-					getFluentWait();
+					Thread.sleep(1000);
 			
 	        
 				Assert.assertEquals(getText(inspRep.getReportTitle()), "PSC INSPECTION - "+currentYear);

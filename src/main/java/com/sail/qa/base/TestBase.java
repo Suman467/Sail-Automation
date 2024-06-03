@@ -1,10 +1,16 @@
 package com.sail.qa.base;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -76,6 +82,8 @@ public class TestBase {
 	        driver.manage().window().maximize();
 	        options.addArguments("--disable-cache");
 	        options.addArguments("--no-sandbox");
+	        options.setExperimentalOption("useAutomationExtension", false);
+	        options.addArguments("--disable-blink-features=AutomationControlled");
 	        
 
 	    } catch (Exception e) {
@@ -115,14 +123,23 @@ public class TestBase {
 	        WebDriverManager.edgedriver().operatingSystem(OperatingSystem.MAC).setup();
 	    else if (os.contains("win")) {
 	        WebDriverManager.edgedriver().operatingSystem(OperatingSystem.WIN).setup();
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("document.body.style.zoom='70%'");
 	    } else {
 	        log.error("Unsupported operating system: " + os);
 	        throw new UnsupportedOperationException("Unsupported operating system: " + os);
 	    }
+	    
+	    
 
 	    EdgeOptions edgeOptions = new EdgeOptions();
 	    driver = new EdgeDriver(edgeOptions);
 	    log.info("Edge driver is Initialized");
+	    
+	    
+	    
+	    
+	   
 	}
 	        
 	        
@@ -186,12 +203,12 @@ public class TestBase {
 	
 
 	public static FluentWait<WebDriver> getFluentWait() {
-		return new FluentWait<>(driver).withTimeout(Duration.ofSeconds(780)).pollingEvery(Duration.ofSeconds(30))
+		return new FluentWait<>(driver).withTimeout(Duration.ofSeconds(180)).pollingEvery(Duration.ofSeconds(30))
 				.ignoring(NoSuchElementException.class);
 	}
 
 	public FluentWait<WebDriver> getShortFluentWait() {
-		return new FluentWait<>(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofMillis(500))
+		return new FluentWait<>(driver).withTimeout(Duration.ofSeconds(1)).pollingEvery(Duration.ofMillis(1))
 				.ignoring(NoSuchElementException.class);
 	}
 
@@ -239,7 +256,7 @@ public class TestBase {
 	}
 	
 	public void waitUntilElementIsNotPresent(WebElement element) {
-	    Wait<WebDriver> fluentWait = getFluentWait();
+	    Wait<WebDriver> fluentWait = getShortFluentWait();
 	    fluentWait.until(ExpectedConditions.invisibilityOf(element));
 	}
 	
@@ -251,6 +268,41 @@ public class TestBase {
 	return element;
 
 	}
+	
+	
+	 public static String generateRandomNumberWithPrefix() {
+		  
+	        Random random = new Random();
+	        int randomNumber = random.nextInt(10000); // Generates a random number between 0 and 9999
+	        return "Automation" + randomNumber;
+	    }
+	 
+	 
+	 public static void uploadFileAndattAchments(String path) throws AWTException
+	 {
+		 Robot robot = new Robot();
+
+	        // Copy the file path to the clipboard
+	        StringSelection filePath = new StringSelection(path);
+	        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filePath,null);
+
+	        // Paste the file path
+	        robot.delay(1000); // Add delay to ensure the dialog is open
+	        robot.keyPress(KeyEvent.VK_CONTROL);
+	        robot.keyPress(KeyEvent.VK_V);
+	        getFluentWait();
+	        robot.keyRelease(KeyEvent.VK_V);
+	        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+	        // Press Enter to close the dialog
+	        getFluentWait();
+			
+
+	        robot.keyPress(KeyEvent.VK_ENTER);
+	      
+	        robot.keyRelease(KeyEvent.VK_ENTER);
+	 }
+	
 	
 		
 }

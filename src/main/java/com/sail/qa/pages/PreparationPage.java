@@ -131,8 +131,8 @@ public class PreparationPage {
 
 
 	public WebElement selectPortFromDropdown(int indexToSelectPort) {
-        WebElement vesselList = ldriver.findElement(By.xpath("(//span[@class='ng-option-label ng-star-inserted'])[" + indexToSelectPort + "]"));
-		return vesselList;
+        WebElement portList = ldriver.findElement(By.xpath("(//span[@class='ng-option-label ng-star-inserted'])[" + indexToSelectPort + "]"));
+		return portList;
        
     }
 	

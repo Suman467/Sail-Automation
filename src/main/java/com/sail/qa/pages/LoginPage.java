@@ -91,6 +91,27 @@ public class LoginPage {
 	}
 	
 	
+	// For Invalid credentials
+	
+	//@FindBy(xpath="//span[normalize-space()='Tenant not found']")
+	@FindBy(xpath="//snack-bar-container[@role='status']")
+	WebElement invalidDeatils;
+
+	
+	
+
+	
+	
+	public WebElement getInvalidDetails() {
+		return invalidDeatils;
+	}
+
+	
+	@FindBy(xpath="(//div[@class='mat-slide-toggle-thumb'])[1]")
+	WebElement remeberToggleBtn;
+	
+	@FindBy(xpath="(//input[@id='mat-slide-toggle-1-input'])[1]")
+	WebElement toggleBtnState;
 	
 
 	

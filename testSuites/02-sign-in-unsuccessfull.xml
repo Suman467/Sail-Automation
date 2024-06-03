@@ -3,9 +3,7 @@
 <suite name="Admin Sign-in Unsuccessfull">
 <suite-files>
 
-<suite-file path="./TestCases/adminSignIn-TC.xml"> </suite-file>
-<suite-file path="./TestCases/preparation-TC.xml"></suite-file> 
-<suite-file path="./TestCases/addNewPreparation-TC.xml"></suite-file>
+<suite-file path="./TestCases/adminSignInFailed-TC.xml"> </suite-file>
 <suite-file path="./TestCases/tearDown-TC.xml"></suite-file>
 	
 </suite-files>		

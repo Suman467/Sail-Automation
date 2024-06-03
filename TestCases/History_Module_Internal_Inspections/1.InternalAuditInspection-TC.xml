@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="INTERNAL AUDIT Inspection Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="INTERNAL AUDIT Inspection Suite">
+
+		<!--Sign-in Inputs -->
+ 
+       <parameter name = "vesselName" value="Antonis I. Angelicoussis"/>
+       <parameter name = "portIndex" value= "5"/>
+      <parameter name="inspectionStatusCalender" value="Audited"/>
+     
+      <parameter name="indexToSelectAuditScope" value="13"/>
+       <parameter name="inspectionStatusCalender1" value="CAP Submitted"/>
+      <parameter name="indexToSelectDeviationScope" value="14"/>
+      <parameter name="deviationName" value="Observation"/>
+     
+       <parameter name= "viqRef1" value="1.8"/>
+       <parameter name= "viqRef2" value="1.17"/>
+       <parameter name= "viqRef3" value="2.1.1"/>
+       
+       <parameter name="inspectionName" value="Internal Audit"/>    
+     
+
+		<classes>
+		
+		<class name="com.sail.qa.TestCases.HistoryPageCommonMenthods">
+				<methods>
+					<include name="VerifyHistoryPage" />	 	
+				</methods>
+			</class>
+		
+		
+			<class name="com.sail.qa.TestCases.InternalInspectionsRecord">
+				<methods>
+					
+					<include name="AddNewInternalAuditRecordWithObservation"/> 
+				 	
+				</methods>
+			</class>
+		 
+		
+			
+			
+		
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

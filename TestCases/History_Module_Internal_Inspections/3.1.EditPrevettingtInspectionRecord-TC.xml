@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="PREVETTING Inspection Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="Prevetting Inspection Suite">
+
+		<!--Sign-in Inputs -->
+ 
+       <parameter name = "vesselName" value="Antonis I. Angelicoussis"/>
+     
+       <parameter name= "viqRef1" value="1.8"/>
+       <parameter name= "viqRef2" value="1.17"/>
+       <parameter name= "viqRef3" value="2.1.1"/>
+        <parameter name="deviationName" value="Observation"/>
+       
+       <parameter name="indexToSelectimmediateCause" value="27"/>
+       <parameter name="indexToSelectrootCause" value="23"/> 
+       <parameter name="indexToSelectReviewCalender" value="2"/>
+       <parameter name="indexToSelectReviewText" value="2"/>
+       
+     <parameter name="filePath" value="C:\Users\admin\Desktop\ObsFiles\Observations_List.xls"/>
+        
+          <parameter name="UploadImagePath" value="C:\Users\admin\Desktop\Images\Maran Mira.jpg"/>
+       
+       <!--   Attachments Verification -->
+       
+       
+       <parameter name = "attachmentIndexOfObs1" value="1"/>
+       <parameter name = "attachmentIndexOfObs2" value="2"/>
+       <parameter name = "attachmentName" value="Obs-1-"/>
+       <parameter name = "attachmentIndexOfIns1" value="3"/>
+       
+        <!--   Action Details -->
+        
+        <parameter name= "actionName" value="Corrective Action Planned"/>
+        <parameter name= "proposedBy" value="Office"/>
+        <parameter name= "actionStatus" value="Open"/>
+       
+       <parameter name="inspectionName" value="Prevetting"/>    
+     
+
+		<classes>
+		
+			
+		<class name="com.sail.qa.TestCases.HistoryPageCommonMenthods">
+				<methods>
+					<include name="VerifyHistoryPage" />
+					<include name="SelectInspection"/> 		 	
+				</methods>
+			</class>
+			
+		
+		
+			<class name="com.sail.qa.TestCases.UpdateInternalInspectionsRecord">
+				<methods>
+				
+				    <include name="printIinspectionDetails"/>						
+					<include name="EditPrevettingInspectionRecord"/> 
+					<include name="uploadExcelForObservation"/>	
+					<include name="checkAttachmentInsideRecord"/> 
+				 	
+				</methods>
+			</class>
+		 
+		
+			
+			
+		
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

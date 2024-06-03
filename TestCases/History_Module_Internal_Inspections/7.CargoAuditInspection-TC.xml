@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="CARGO AUDIT Inspection Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="CARGO AUDIT Inspection Suite">
+
+		<!--Sign-in Inputs -->
+ 
+       <parameter name = "vesselName" value="Antonis I. Angelicoussis"/>
+       <parameter name = "portIndex" value= "5"/>
+      <parameter name="inspectionStatusCalender" value="Audited"/>
+      <parameter name="inspStatus" value="Report Issued"/>
+      
+       <parameter name="deviationName" value="Major Non-Conformity"/>
+       <parameter name="internalChapter" value="Policies and Procedures"/>
+     
+       <parameter name= "viqRef1" value="1.10"/>
+       <parameter name= "viqRef2" value="1.22"/>
+       <parameter name= "viqRef3" value="2.1.7"/>
+       
+       <parameter name="inspectionName" value="Cargo Audit"/>    
+     
+
+		<classes>
+		
+		<class name="com.sail.qa.TestCases.HistoryPageCommonMenthods">
+				<methods>
+					<include name="VerifyHistoryPage" />	 	
+				</methods>
+			</class>
+		
+		
+			<class name="com.sail.qa.TestCases.InternalInspectionsRecord">
+				<methods>
+					
+					<include name="AddNewCMBAuditRecordWithObservation"/> 
+				 	
+				</methods>
+			</class>
+		 
+		
+			
+			
+		
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -293,7 +293,7 @@ public class AllInspectionSummaryReport extends TestBase {
 			
 			clickElement(inspReport.getAllObservationCheckBox());
 			System.out.println("All Observation check box is selected");
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			clickElement(inspReport.getPscCheckBox());
 			log.info("PSC external inspection checkbox is selected");
 			System.out.println("PSC external inspection checkbox is selected on the report page");

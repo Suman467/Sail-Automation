@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="External Audit inspection Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="External Audit inspection">
+
+		<!--Sign-in Inputs -->
+ 
+       <parameter name = "vesselName" value="Antonis I. Angelicoussis"/>
+       <parameter name = "portIndex" value= "5"/>
+       <parameter name = "auditType" value= "2"/>
+       <parameter name = "auditScope" value= "12"/>
+       <parameter name = "deviationScope" value= "14"/>
+       <parameter name = "deviationName" value="Non Conformity"/>
+       <parameter name= "viqRef1" value="1.8"/>
+       <parameter name= "viqRef2" value="1.19"/>
+       <parameter name= "viqRef3" value="2.1.2"/>
+       
+       <parameter name= "inspectionName" value="External Audit"/>
+       
+        <parameter name="indexToSelectimmediateCause" value="27"/>
+       <parameter name="indexToSelectrootCause" value="23"/>
+      
+     <parameter name="filePath" value="C:\Users\admin\Desktop\ObsFiles\Observations_List.xls"/>
+         <parameter name="UploadImagePath" value="C:\Users\admin\Desktop\Images\Maran Mira.jpg"/>
+       
+       <!--   Attachments Verification -->
+       
+       
+       <parameter name = "attachmentIndexOfObs1" value="1"/>
+       <parameter name = "attachmentIndexOfObs2" value="2"/>
+       <parameter name = "attachmentName" value="Obs-1-"/>
+       <parameter name = "attachmentIndexOfIns1" value="3"/>
+       
+        <!--   Action Details -->
+        
+        <parameter name= "actionName" value="Corrective Action Planned"/>
+        <parameter name= "proposedBy" value="Office"/>
+        <parameter name= "actionStatus" value="Open"/>
+       
+
+		<classes>		
+		<class name="com.sail.qa.TestCases.HistoryPageCommonMenthods">
+				<methods>
+					<include name="VerifyHistoryPage" />	
+					<include name="SelectInspection"/> 	
+				</methods>
+			</class>
+			
+			
+			<class name="com.sail.qa.TestCases.UpdateExternalInspectionsRecord">
+				<methods>
+				
+				     <include name="printIinspectionDetails"/>
+					<include name="EditExternalAuditRecord" />	    
+					<include name="uploadExcelForObservation"/>	
+					 <include name="checkAttachmentInsideRecord"/> 
+				</methods>
+			</class>
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

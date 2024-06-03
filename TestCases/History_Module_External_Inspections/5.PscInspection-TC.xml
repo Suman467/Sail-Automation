@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="PSC inspection Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="PSC inspection">
+
+		<!--Sign-in Inputs -->
+ 
+       <parameter name = "vesselName" value="Antonis I. Angelicoussis"/>
+       <parameter name = "portIndex" value= "5"/>
+       <parameter name = "mouIndex" value= "6"/>
+       <parameter name= "indexToSelectPscCode" value="3"/>
+       <parameter name= "indexToSelectDefCode" value="5"/>
+       
+       <parameter name= "inspectionName" value="PSC"/>
+      
+
+		<classes>
+		<class name="com.sail.qa.TestCases.HistoryPageCommonMenthods">
+				<methods>
+					<include name="VerifyHistoryPage" />	 	
+				</methods>
+			</class>
+		
+			<class name="com.sail.qa.TestCases.ExternalInspectionsRecord">
+				<methods>	
+					<include name="AddPSCWithObservation"/> 
+				 	 
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
