@@ -57,7 +57,8 @@
 				     <include name="printIinspectionDetails"/>
 					<include name="EditFlagStateRecord" />	    
 					<include name="uploadExcelForObservation"/>	
-					  <include name="checkAttachmentInsideRecord"/>  
+					  <include name="checkAttachmentInsideRecord"/>   
+					  <include name="uploadExcelForObservation"/>	
 				</methods>
 			</class>
 		</classes>

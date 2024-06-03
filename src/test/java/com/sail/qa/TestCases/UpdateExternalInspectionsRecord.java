@@ -382,10 +382,7 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		
 		historyMethod.uploadAttachmentsInInspectionPage(UploadImagePath);
 		
-		getFluentWait();
-		clickElement(history.getNextBtn());
-		System.out.println("Next button is clicked");
-		log.info("Next button is clicked");
+		
 		
 		clickElement(history.getAddNewObsBtn());
 		System.out.println("Add New Obs button is clicked");
@@ -486,10 +483,7 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		
 		historyMethod.uploadAttachmentsInInspectionPage(UploadImagePath);
 		
-		getFluentWait();
-		clickElement(history.getNextBtn());
-		System.out.println("Next button is clicked");
-		log.info("Next button is clicked");
+		
 		
 		clickElement(history.getAddNewObsBtn());
 		System.out.println("Add New Obs button is clicked");
@@ -564,10 +558,7 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		
 		historyMethod.uploadAttachmentsInInspectionPage(UploadImagePath);
 		
-		getFluentWait();
-		clickElement(history.getNextBtn());
-		System.out.println("Next button is clicked");
-		log.info("Next button is clicked");
+		
 		
 		clickElement(history.getAddNewObsBtn());
 		System.out.println("Add New Obs button is clicked");
@@ -627,10 +618,7 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		
 		historyMethod.uploadAttachmentsInInspectionPage(UploadImagePath);
 		
-		getFluentWait();
-		clickElement(history.getNextBtn());
-		System.out.println("Next button is clicked");
-		log.info("Next button is clicked");
+		
 		
 		clickElement(history.getAddNewObsBtn());
 		System.out.println("Add New Obs button is clicked");
@@ -731,10 +719,7 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		
 		historyMethod.uploadAttachmentsInInspectionPage(UploadImagePath);
 		
-		getFluentWait();
-		clickElement(history.getNextBtn());
-		System.out.println("Next button is clicked");
-		log.info("Next button is clicked");
+		
 		
 		clickElement(history.getAddNewObsBtn());
 		System.out.println("Add New Obs button is clicked");
@@ -804,10 +789,7 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		getFluentWait();
 		historyMethod.uploadAttachmentsInInspectionPage(UploadImagePath);
 		
-		getFluentWait();
-		clickElement(history.getNextBtn());
-		System.out.println("Next button is clicked");
-		log.info("Next button is clicked");
+		
 		
 		clickElement(history.getAddNewObsBtn());
 		System.out.println("Add New Obs button is clicked");
