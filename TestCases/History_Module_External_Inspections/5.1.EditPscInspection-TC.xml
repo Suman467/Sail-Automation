@@ -57,9 +57,9 @@
 				<methods>
 				
 				     <include name="printIinspectionDetails"/>
-					<include name="EditPscRecord" />	    
+				<include name="EditPscRecord" />	    
 					<include name="uploadExcelForObservation"/>	
-					 <include name="checkAttachmentInsideRecord"/>
+					 <include name="checkAttachmentInsideRecord"/>  
 				</methods>
 			</class>
 		</classes>

@@ -62,7 +62,7 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		clickElement(history.getEditIcon());
 		System.out.println("Edit icon is clicked");
 		
-		
+		  
 		historyMethod.uploadAttachmentsInInspectionPage(UploadImagePath);
 		
 	
@@ -297,15 +297,8 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		clickElement(history.getEditIcon());
 		System.out.println("Edit icon is clicked");
 		
-		getFluentWait();
-		clickElement(history.getNextBtn());
-		System.out.println("Next button is clicked");
-		log.info("Next button is clicked");
-		
-		
-		// Upload attachment in inspection
-		
 		historyMethod.uploadAttachmentsInInspectionPage(UploadImagePath);
+		
 		
 		clickElement(history.getAddNewObsBtn());
 		System.out.println("Add New Obs button is clicked");
