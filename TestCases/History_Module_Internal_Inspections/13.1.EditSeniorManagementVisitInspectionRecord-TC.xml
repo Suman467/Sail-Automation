@@ -55,7 +55,7 @@
 			<class name="com.sail.qa.TestCases.UpdateInternalInspectionsRecord">
 				<methods>
 				
-				 <!--    <include name="printIinspectionDetails"/>  -->
+				 <!--   <include name="printIinspectionDetails"/>   -->
 						
 					<include name="EditSeniorManagementVisitRecord"/> 
 				<!-- 	<include name="uploadExcelForObservation"/>	 -->

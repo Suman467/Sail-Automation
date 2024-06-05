@@ -55,7 +55,7 @@
 				<methods>
 				
 				     <include name="printIinspectionDetails"/>
-					<include name="EditRisqRecord" />	    
+				 	<include name="EditRisqRecord" />	    
 					<include name="uploadExcelForObservation"/>	
 					 <include name="checkAttachmentInsideRecord"/> 
 				</methods>

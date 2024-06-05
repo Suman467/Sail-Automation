@@ -1182,7 +1182,7 @@ public class HistoryPage {
 				}
 				
 				
-				@FindBy(xpath="(//ng-select[@placeholder='Select Ques Category'])[2]")
+				@FindBy(xpath="//ng-select[@placeholder='Select Ques Category']")
 				WebElement quesCat;
 				
 				public WebElement selectQuesCategory(String QuestionCategory) {
@@ -1246,7 +1246,7 @@ public class HistoryPage {
 				}
 				
 				
-				@FindBy(xpath="(//span[contains(text(),'Select Ques Category')])[2]")
+				@FindBy(xpath="//span[contains(text(),'Select Ques Category')]")
 				WebElement quesCatInSecondPageOofObs;
 				
 				public WebElement getQuesCatInSecondPageOofObs() {
@@ -1617,6 +1617,84 @@ public class HistoryPage {
 				
 			
 
+				// internal, Prevetting, nav audit, VDR, Cargo, mooring, Bunkering,Engineering Env,Others, SeniorMan inpsection action
+				
+				@FindBy(xpath="(//app-mat-date-picker[@class='ng-star-inserted'])[16]")
+				WebElement dueDateFormlyInternalInspections;   
+				
+				
+				@FindBy(xpath="(//span[normalize-space()='Save'])[3]")
+				WebElement actionSaveInternalAudit;
 
+				
+
+				public WebElement getActionSaveInternalAudit() {
+					return actionSaveInternalAudit;
+				}
+
+
+				public WebElement getDueDateFormlyInternalInspections() {
+					return dueDateFormlyInternalInspections;
+				}
+
+				
+				// Supdt. Inspection
+				
+				@FindBy(xpath="(//app-mat-date-picker[@class='ng-star-inserted'])[17]")
+				WebElement dueDateSupdtInsp;
+
+				
+
+				public WebElement getDueDateSupdtInsp() {
+					return dueDateSupdtInsp;
+				}
+				
+				// Negative Cases
+				
+				@FindBy(xpath="//span[normalize-space()='Back']")
+				WebElement backBtn;
+				
+				
+
+				@FindBy(xpath="//formly-validation-message[normalize-space()='Port is required']")
+				WebElement portValidation;
+				
+				@FindBy(xpath="//formly-validation-message[normalize-space()='Oil Major is required']")
+				WebElement oilMajorValidation;
+				
+				@FindBy(xpath="//formly-validation-message[normalize-space()='Inspected is required']")
+				WebElement inspectDateValidation;
+				
+				@FindBy(xpath="//mat-error[@class='mat-error ng-tns-c67-39']//formly-validation-message[contains(text(),'Inspection Status is required')]")
+				WebElement inspStatusValidation;
+				
+			
+			
+				public WebElement getBackBtn() {
+					return backBtn;
+				}
+
+
+				public WebElement getPortValidation() {
+					return portValidation;
+				}
+
+
+				public WebElement getOilMajorValidation() {
+					return oilMajorValidation;
+				}
+
+
+				public WebElement getInspectDateValidation() {
+					return inspectDateValidation;
+				}
+
+
+				public WebElement getInspStatusValidation() {
+					return inspStatusValidation;
+				}
+
+
+				
 	
 	}

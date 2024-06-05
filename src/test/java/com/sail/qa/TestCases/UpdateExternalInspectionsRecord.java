@@ -139,7 +139,9 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		System.out.println("\n ********** Inspection Details After Record Updation********** \n");
 		
 		historyMethod.printInspectionDetails();
-		getFluentWait();
+
+		Thread.sleep(1000);
+		
 				
 		
 	}
@@ -275,7 +277,7 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		System.out.println("\n ********** Inspection Details After Uploading Excel ********** \n");
 		
 		historyMethod.printInspectionDetails();
-		getFluentWait();
+		Thread.sleep(1000);
 				
 	}
 	
@@ -360,7 +362,7 @@ public class UpdateExternalInspectionsRecord extends TestBase {
 		System.out.println("\n ********** Inspection Details After Record Updation********** \n");
 		
 		historyMethod.printInspectionDetails();
-		getFluentWait();
+		Thread.sleep(1000);
 				
 		
 	}

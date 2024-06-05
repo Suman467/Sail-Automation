@@ -1186,11 +1186,11 @@ public class ExternalInspectionsRecord extends TestBase {
 	}
 	
 	
-	@Parameters({"inspectionName","vesselName", "inspStatus","screeninStatus","oilMajorIndex","viqRef1","viqRef2","viqRef3"})
+	@Parameters({"inspectionName","vesselName", "inspStatus","oilMajorIndex", "screeningStatus","viqRef1","viqRef2","viqRef3"})
 	@Test
 	
-	public void AddNewScreengRecordWithObservation(String inspectionName, String vesselName, String inspStatus , int oilMajorIndex,String screeninStatus,
-			String viqRef1, String viqRef2, String viqRef3) throws InterruptedException
+	public void AddNewScreengRecordWithObservation(String inspectionName, String vesselName, String inspStatus , int oilMajorIndex,
+			String screeningStatus,String viqRef1, String viqRef2, String viqRef3) throws InterruptedException
 	{
 		HistoryPage history =new HistoryPage(driver);
 		System.out.println("\n **********SCREENING Inspection Record creation********** \n");
@@ -1231,7 +1231,8 @@ public class ExternalInspectionsRecord extends TestBase {
 		getFluentWait();
 		
 		clickElement(history.getPositiveScreening());
-		clickElement(history.selectPositveScreenig(screeninStatus));
+		getFluentWait();
+		clickElement(history.selectPositveScreenig(screeningStatus));
 		System.out.println("Screening status is selected");
 		
 		

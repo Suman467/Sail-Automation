@@ -290,7 +290,6 @@ public class TestBase {
 	        robot.delay(1000); // Add delay to ensure the dialog is open
 	        robot.keyPress(KeyEvent.VK_CONTROL);
 	        robot.keyPress(KeyEvent.VK_V);
-	        getFluentWait();
 	        robot.keyRelease(KeyEvent.VK_V);
 	        robot.keyRelease(KeyEvent.VK_CONTROL);
 

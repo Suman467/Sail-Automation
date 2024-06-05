@@ -934,7 +934,7 @@ public class InternalInspectionsRecord extends TestBase {
 	// Other Inspection
 	
 	
-	@Parameters({"inspectionName","vesselName","portIndex", "inspectionStatusCalender","inspStatus"})
+	@Parameters({"inspectionName","vesselName","portIndex", "inspectionStatusCalender","inspStatus","deviationName","viqRef1","viqRef2","viqRef3"})
 	@Test
 	
 	public void AddNewOthersRecorddWithObservation(String inspectionName,String vesselName, int portIndex , String inspectionStatusCalender , String inspStatus,

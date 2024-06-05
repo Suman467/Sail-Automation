@@ -15,7 +15,7 @@
        <parameter name = "vesselName" value="Antonis I. Angelicoussis"/>
        <parameter name = "oilMajorIndex" value= "6"/>
        <parameter name="inspStatus" value="In Progress"/>
-       <parameter name ="screeninStatus" value="Yes"/>
+       <parameter name ="screeningStatus" value="Yes"/>
        <parameter name= "viqRef1" value="1.8"/>
        <parameter name= "viqRef2" value="1.16"/>
        <parameter name= "viqRef3" value="1.24"/>

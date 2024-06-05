@@ -62,7 +62,7 @@
 				<methods>
 				
 				    
-				 	<include name="EditScreeninRecord"/>  	
+				 	<include name="EditScreeninRecord"/>  
 				 	<include name="checkAttachmentInsideRecord"/>     
 				 	
 				</methods>

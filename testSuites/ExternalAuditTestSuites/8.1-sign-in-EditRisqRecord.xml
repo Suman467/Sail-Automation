@@ -4,7 +4,7 @@
 <suite-files>
 
 <suite-file path="./TestCases/adminSignIn-TC.xml"> </suite-file>
-<suite-file path="./TestCases/History_Module_Internal_Inspections/8.1.EditRisqInspection-TC.xml"></suite-file> 
+<suite-file path="./TestCases/History_Module_External_Inspections/8.1.EditRisqInspection-TC.xml"></suite-file> 
 <suite-file path="./TestCases/tearDown-TC.xml"></suite-file>
 	
 </suite-files>		

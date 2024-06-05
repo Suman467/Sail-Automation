@@ -6,6 +6,8 @@
 <suite-file path="./TestCases/adminSignInDev2-TC.xml"> </suite-file>
 <suite-file path="./TestCases/History_Module_Internal_Inspections/1.1.EditInternalAuditInspectionRecord-TC.xml"></suite-file> 
 <suite-file path="./TestCases/tearDown-TC.xml"></suite-file>
+
 	
 </suite-files>		
+
 </suite> <!-- Suite -->

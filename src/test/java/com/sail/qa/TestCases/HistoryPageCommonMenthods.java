@@ -423,6 +423,82 @@ public class HistoryPageCommonMenthods extends TestBase {
 	
 	
 	
+	// add action for internal Inspections
+	
+	public void addActionForInternalInspections(String inspectionName, String actionName, String proposedBy, String actionStatus)
+	{
+		HistoryPage history =new HistoryPage(driver);
+		clickElement(history.getAddActionBtn());
+		getFluentWait();
+		
+		
+		
+		clickElement (history.getActionhover());
+		
+		getFluentWait();
+		clickElement(history.selectActionType(actionName));
+		System.out.println("Action type : " +actionName + " is selected");
+		getFluentWait();
+		clickElement(history.getProposedBy());
+		getFluentWait();
+		clickElement(history.selectProposedBy(proposedBy));
+		System.out.println("Proposed by " + proposedBy + " is selected");
+		getFluentWait();
+		
+		
+		Actions actions = new Actions(driver);
+
+        // Click on the input field and send text
+        actions.click(history.getNatureOfAction()).sendKeys("Nature of action entered using automation tool").build().perform();
+			
+        getFluentWait();
+        
+        clickElement(history.getDueDateFormlyInternalInspections());
+        
+        /*
+        
+        try {
+             if(inspectionName.equals("Supdt. Inspection")) {
+       
+       
+		clickElement(history.getDueDateSupdtInsp());
+        }
+        
+        else {
+        	clickElement(history.getDueDateFormlyInternalInspections());
+        }}
+	    catch(Exception e){
+	    }
+	    
+	    */
+	    	
+		clickElement(selectInspectionDate(history.getCurrentDate()));
+		System.out.println("Action due date is entered");
+		log.info("Action due date is entered");
+		
+		getFluentWait();
+		clickElement(history.getActionStatusFormly());
+		
+		
+		clickElement(history.selectActionStatus(actionStatus));
+		System.out.println("Action Status is selcted");
+		
+		
+		scrollCheckAndClick(history.getActionSaveInternalAudit());
+		
+		  
+		System.out.println("Action save button is clicked");
+		System.out.println("Action pop-up is closed");
+		getFluentWait();
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 			
 		

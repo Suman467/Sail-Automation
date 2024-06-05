@@ -62,10 +62,9 @@
 				
 				    <include name="printIinspectionDetails"/>
 						
-					<include name="EditInternalAuditRecord"/> 
+				 	<include name="EditInternalAuditRecord"/> 
 					<include name="uploadExcelForObservation"/>	
-					 <include name="checkAttachmentInsideRecord"/>  
-				 	
+					 <include name="checkAttachmentInsideRecord"/> 
 				</methods>
 			</class>
 		 
