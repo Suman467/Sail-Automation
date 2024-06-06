@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Admin Sign-in successfull And Create New TERMINAL With Multiple Observations and Attachments Record">
+<suite-files>
+
+<suite-file path="./TestCases/adminSignInDev2-TC.xml"> </suite-file>
+<suite-file path="./TestCases/External_Inspections_WithAllDetails/4.TerminalInspection-TC.xml"></suite-file> 
+<suite-file path="./TestCases/tearDown-TC.xml"></suite-file>
+	
+</suite-files>		
+</suite> <!-- Suite -->

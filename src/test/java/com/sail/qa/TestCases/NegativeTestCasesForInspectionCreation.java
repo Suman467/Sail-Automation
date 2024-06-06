@@ -372,19 +372,19 @@ public class NegativeTestCasesForInspectionCreation extends TestBase {
         
         getFluentWait();
         Assert.assertTrue(history.getPortValidation().isDisplayed());
-        System.out.println("Validation " + getText(history.getPortValidation()) + "is appearing");
+        System.out.println("Validation " + getText(history.getPortValidation()) +" is appearing");
         getFluentWait();
         
         Assert.assertTrue(history.getOilMajorValidation().isDisplayed());
-        System.out.println("Validation " + getText(history.getOilMajorValidation()) + "is appearing");
+        System.out.println("Validation : " + getText(history.getOilMajorValidation()) +" is appearing");
         getFluentWait();
         
         Assert.assertTrue(history.getInspectDateValidation().isDisplayed());
-        System.out.println("Validation " + getText(history.getInspectDateValidation()) + "is appearing");
+        System.out.println("Validation : " + getText(history.getInspectDateValidation()) +" is appearing");
         getFluentWait();
         
         Assert.assertTrue(history.getInspStatusValidation().isDisplayed());
-        System.out.println("Validation " + getText(history.getInspStatusValidation()) + "is appearing");
+        System.out.println("Validation : " + getText(history.getInspStatusValidation()) +"is appearing");
         
 		
        

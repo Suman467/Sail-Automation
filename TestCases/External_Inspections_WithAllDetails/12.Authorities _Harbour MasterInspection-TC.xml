@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Green Award Inspection Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="Green Award Inspection Suite">
+
+		<!--Sign-in Inputs -->
+ 
+       <parameter name = "vesselName" value="Antonis I. Angelicoussis"/>
+       <parameter name = "portIndex" value= "5"/>
+       <parameter name="inspStatus" value="Audited"/>
+       <parameter name ="indexToClickDeviation" value="2"/>
+       <parameter name="deviationName" value="Improvement Suggestion"/>
+        <parameter name="deviationName2" value="Non Conformity"/>
+         <parameter name="deviationName3" value="Major Non-Conformity"/>
+          <parameter name="deviationName4" value="Observation"/>
+          
+        <parameter name= "viqRef1" value="1.8"/>
+       <parameter name= "viqRef2" value="1.17"/>
+       <parameter name= "viqRef3" value="2.1.1"/>
+        <parameter name= "viqRef4" value="2.1.11"/>
+         <parameter name= "viqRef5" value="2.5"/>
+          <parameter name= "viqRef6" value="2.15"/>
+       
+       
+        <parameter name= "inspectionName" value="Authorities / Harbour Master"/>   
+
+
+      <parameter name="UploadImagePath"
+		value="C:\Users\admin\Desktop\Images\Maran Mira.jpg" />
+	<parameter name="UploadImagePath2"
+		value="C:\Users\admin\Desktop\Images\Test.pdf" />
+	<parameter name="UploadImagePath3"
+		value="C:\Users\admin\Desktop\Images\Test.doc" />
+	<parameter name="UploadImagePath4"
+		value="C:\Users\admin\Desktop\Images\Test.xml" />
+          
+             <!--   Attachments Verification -->
+       
+       
+       <parameter name = "attachmentIndexOfObs1" value="1"/>
+       <parameter name = "attachmentIndexOfObs2" value="2"/> 
+       <parameter name = "attachmentIndexOfObs3" value="3"/>
+        <parameter name = "attachmentIndexOfObs4" value="4"/>
+       <parameter name = "attachmentName1" value="Obs-1-"/>
+       <parameter name = "attachmentName2" value="Obs-2-"/>
+        <parameter name = "attachmentName3" value="Obs-3-"/>
+         <parameter name = "attachmentName4" value="Obs-4-"/>
+       <parameter name = "attachmentIndexOfIns1" value="6"/>
+         <parameter name = "attachmentIndexOfIns2" value="6"/>
+           <parameter name = "attachmentIndexOfIns3" value="6"/>
+             <parameter name = "attachmentIndexOfIns4" value="6"/>
+       
+      
+       
+      
+
+		<classes>
+		
+		<class name="com.sail.qa.TestCases.HistoryPageCommonMenthods">
+				<methods>
+					<include name="VerifyHistoryPage" />	
+					<include name="SelectInspection"/> 	  	
+				</methods>
+			</class>
+		
+		
+			<class name="com.sail.qa.TestCases.ExternalInspectionsRecordWithAllDetails">
+				<methods>
+					
+					<include name="AddNewGreenAwardRecord"/> 
+				 	
+				</methods>
+			</class>
+			
+			
+			
+			<class name="com.sail.qa.TestCases.UpdateExternalInspectionsRecordVerify">
+				<methods>
+				
+					<include name="printIinspectionDetails"/>	
+					<include name="verifyInspectionDetails"/> 
+				 	
+				</methods>
+			</class>
+			
+			
+		
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

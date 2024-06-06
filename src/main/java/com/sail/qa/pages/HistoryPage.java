@@ -1093,7 +1093,7 @@ public class HistoryPage {
 				}
 				
 				public WebElement DeviationFromDropdown(String deviationName) {
-			        WebElement deviationList = ldriver.findElement(By.xpath("//span[normalize-space()='" + deviationName + "']"));                                    
+			        WebElement deviationList = ldriver.findElement(By.xpath("//span[@class='mat-option-text'][normalize-space()='" + deviationName + "']"));                                    
 					return deviationList;
 				}
 				
@@ -1221,7 +1221,7 @@ public class HistoryPage {
 				
 								
 				public WebElement selectNocSocFromDropDown(int indexToSelectNoc) {
-			        WebElement NocValue = ldriver.findElement(By.xpath("(//span[@class='mat-option-text'])[" + indexToSelectNoc + "]"));
+			        WebElement NocValue = ldriver.findElement(By.xpath("(//span[@class='ng-option-label ng-star-inserted'])[" + indexToSelectNoc + "]"));
 					return NocValue;
 				}
 				
@@ -1694,6 +1694,60 @@ public class HistoryPage {
 					return inspStatusValidation;
 				}
 
+				
+				
+				
+				
+				//  Observations count
+				
+				public WebElement observationNumber(int obsNumber) {
+				      
+			        WebElement obsList=ldriver.findElement(By.xpath("//span[normalize-space()='" + obsNumber + "']"));
+					return obsList;
+			       
+			    }	
+				
+				
+				@FindBy(xpath="//li[@class='ng-star-inserted active']")
+				WebElement activeObsName;
+				
+				@FindBy(xpath="//li[normalize-space()='2']")
+				WebElement secondObs;
+				
+				@FindBy(xpath="//li[normalize-space()='3']")
+				WebElement thirdObs;
+				
+				
+
+				@FindBy(xpath="//li[normalize-space()='4']")
+				WebElement fourthObs;
+
+				
+
+				public WebElement getActiveObsName() {
+					return activeObsName;
+				}
+				
+				public WebElement getSecondObs() {
+					return secondObs;
+				}
+
+
+				public WebElement getThirdObs() {
+					return thirdObs;
+				}
+
+
+				public WebElement getFourthObs() {
+					return fourthObs;
+				}
+
+
+				
+				
+				
+				
+				
 
 				
 	
