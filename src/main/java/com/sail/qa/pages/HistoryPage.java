@@ -1221,7 +1221,7 @@ public class HistoryPage {
 				
 								
 				public WebElement selectNocSocFromDropDown(int indexToSelectNoc) {
-			        WebElement NocValue = ldriver.findElement(By.xpath("(//span[@class='ng-option-label ng-star-inserted'])[" + indexToSelectNoc + "]"));
+			        WebElement NocValue = ldriver.findElement(By.xpath("(//span[contains(text(),'PIF -')])[" + indexToSelectNoc + "]"));
 					return NocValue;
 				}
 				

@@ -931,8 +931,9 @@ public class ExternalInspectionsRecordWithAllDetails extends TestBase {
 
 	public void AddExternalAuditRecord(String inspectionName, String vesselName, int portIndex, int AuditType,
 			int auditScope, int deviationScope, String deviationName, int deviationScope2, String deviationName2,int deviationScope3, String deviationName3,int deviationScope4, String deviationName4,
-			String viqRef1, String viqRef2, String viqRef3,String viqRef4,String viqRef5,String viqRef6, 
-			String UploadImagePath,String UploadImagePath2,	String UploadImagePath3, String UploadImagePath4)
+			String UploadImagePath,String UploadImagePath2,	String UploadImagePath3, String UploadImagePath4,
+			String viqRef1, String viqRef2, String viqRef3,String viqRef4,String viqRef5,String viqRef6 
+			)
 			throws InterruptedException, AWTException {
 
 		HistoryPage history = new HistoryPage(driver);
@@ -1250,14 +1251,15 @@ public class ExternalInspectionsRecordWithAllDetails extends TestBase {
 	// Flag State
 
 	@Parameters({ "inspectionName", "vesselName", "portIndex", "deviationName", "deviationName2","deviationName3","deviationName4",
-		"viqRef1","viqRef2","viqRef3","viqRef4","viqRef5","viqRef6",
-		"UploadImagePath","UploadImagePath2","UploadImagePath3","UploadImagePath4"})
+		"UploadImagePath","UploadImagePath2","UploadImagePath3","UploadImagePath4",
+		"viqRef1","viqRef2","viqRef3","viqRef4","viqRef5","viqRef6"})
 	@Test
 
 	public void AddFlagStateRecord(String inspectionName, String vesselName, int portIndex,
 			String deviationName,String deviationName2, String deviationName3,String deviationName4,
-			String viqRef1, String viqRef2, String viqRef3,String viqRef4,String viqRef5,String viqRef6,
-			String UploadImagePath,String UploadImagePath2,String UploadImagePath3, String UploadImagePath4)throws InterruptedException, AWTException {
+			String UploadImagePath,String UploadImagePath2,String UploadImagePath3, String UploadImagePath4,
+			String viqRef1, String viqRef2, String viqRef3,String viqRef4,String viqRef5,String viqRef6
+			)throws InterruptedException, AWTException {
 
 		HistoryPage history = new HistoryPage(driver);
 		HistoryPageCommonMenthods historyMethod= new HistoryPageCommonMenthods();
@@ -1691,17 +1693,18 @@ public class ExternalInspectionsRecordWithAllDetails extends TestBase {
 		getFluentWait();
 	}
 
-	@Parameters({ "inspectionName", "vesselName", "portIndex", "oilMajorIndex", "indexToSelectInspector", "viqRef1",
-			"viqRef2", "viqRef3", "QuestionCatogery", "quesCatS", "indexToSelectSOCvalue", "quesCatN","indexToSelectNOC",
+	@Parameters({ "inspectionName", "vesselName", "portIndex", "oilMajorIndex", "indexToSelectInspector", 
+		"UploadImagePath","UploadImagePath2","UploadImagePath3","UploadImagePath4",
+		"viqRef1","viqRef2", "viqRef3", "viqRef4","viqRef5","viqRef6","QuestionCatogery", "quesCatS", "indexToSelectSOCvalue", "quesCatN","indexToSelectNOC",
 			 "QuestionCatogery2", "quesCatS2", "indexToSelectSOCvalue2", "quesCatN2","indexToSelectNOC2",
 				 "QuestionCatogery3", "quesCatS3", "indexToSelectSOCvalue3", "quesCatN3","indexToSelectNOC3",
 					 "QuestionCatogery4", "quesCatS4", "indexToSelectSOCvalue4", "quesCatN4","indexToSelectNOC4"})
 	@Test
 
 	public void AddNewSireTrialRecord(String inspectionName, String vesselName, int portIndex,
-			int oilMajorIndex, String UploadImagePath,String UploadImagePath2,
+			int oilMajorIndex, int indexToSelectInspector,String UploadImagePath,String UploadImagePath2,
 			String UploadImagePath3, String UploadImagePath4,
-			int indexToSelectInspector, String viqRef1, String viqRef2, String viqRef3,String viqRef4,String viqRef5,String viqRef6,
+			String viqRef1, String viqRef2, String viqRef3,String viqRef4,String viqRef5,String viqRef6,
 			String QuestionCatogery, String quesCatS, int indexToSelectSOCvalue, String quesCatN, int indexToSelectNOC,
 			String QuestionCatogery2, String quesCatS2, int indexToSelectSOCvalue2, String quesCatN2, int indexToSelectNOC2,
 			String QuestionCatogery3, String quesCatS3, int indexToSelectSOCvalue3, String quesCatN3, int indexToSelectNOC3,
@@ -1866,10 +1869,10 @@ public class ExternalInspectionsRecordWithAllDetails extends TestBase {
 		log.info("SOC is selected");
 		getFluentWait();
 
-		clickElement(history.noc(quesCatN2));
+		clickElement(history.nocForOtherCat(quesCatN2));
 		System.out.println("NOC drop down is clicked ");
 		getFluentWait();
-		clickElement(history.selectNocSocFromDropDown(indexToSelectNOC2));
+		clickElement(history.selecValuesFromDropDown(indexToSelectNOC2));
 		
 		actions.sendKeys(Keys.ESCAPE).build().perform();
 		log.info("NOC drop down is closed");
@@ -1942,10 +1945,10 @@ public class ExternalInspectionsRecordWithAllDetails extends TestBase {
 		log.info("SOC is selected");
 		getFluentWait();
 
-		clickElement(history.noc(quesCatN3));
+		clickElement(history.nocForOtherCat(quesCatN3));
 		System.out.println("NOC drop down is clicked ");
 		getFluentWait();
-		clickElement(history.selectNocSocFromDropDown(indexToSelectNOC3));
+		clickElement(history.selecValuesFromDropDown(indexToSelectNOC3));
 		
 		actions.sendKeys(Keys.ESCAPE).build().perform();
 		log.info("NOC drop down is closed");
@@ -2018,10 +2021,10 @@ public class ExternalInspectionsRecordWithAllDetails extends TestBase {
 		log.info("SOC is selected");
 		getFluentWait();
 
-		clickElement(history.noc(quesCatN4));
+		clickElement(history.nocForOtherCat(quesCatN4));
 		System.out.println("NOC drop down is clicked ");
 		getFluentWait();
-		clickElement(history.selectNocSocFromDropDown(indexToSelectNOC4));
+		clickElement(history.selecValuesFromDropDown(indexToSelectNOC4));
 		
 		actions.sendKeys(Keys.ESCAPE).build().perform();
 		log.info("NOC drop down is closed");
@@ -2069,14 +2072,15 @@ public class ExternalInspectionsRecordWithAllDetails extends TestBase {
 	}
 
 	@Parameters({ "inspectionName", "vesselName", "portIndex", "inspStatus", "indexToClickDeviation", "deviationName","deviationName2","deviationName3","deviationName4"
-			,"viqRef1","viqRef2","viqRef3","viqRef4","viqRef5","viqRef6","UploadImagePath","UploadImagePath2","UploadImagePath3",
-			"UploadImagePath4" })
+		,"UploadImagePath","UploadImagePath2","UploadImagePath3","UploadImagePath4"
+			,"viqRef1","viqRef2","viqRef3","viqRef4","viqRef5","viqRef6" })
 	@Test
 
 	public void AddNewGreenAwardRecord(String inspectionName, String vesselName, int portIndex,
 			String inspStatus, int indexToClickDeviation, String deviationName,String deviationName2,String deviationName3,String deviationName4,
-String viqRef1, String viqRef2,String viqRef3,String viqRef4,String viqRef5,String viqRef6,
-String UploadImagePath,String UploadImagePath2,String UploadImagePath3, String UploadImagePath4) throws InterruptedException, AWTException {
+			String UploadImagePath,String UploadImagePath2,String UploadImagePath3, String UploadImagePath4,
+String viqRef1, String viqRef2,String viqRef3,String viqRef4,String viqRef5,String viqRef6
+) throws InterruptedException, AWTException {
 		
 		HistoryPage history = new HistoryPage(driver);
 		HistoryPageCommonMenthods historyMethod= new HistoryPageCommonMenthods();

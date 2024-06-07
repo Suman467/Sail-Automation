@@ -72,7 +72,9 @@
 					<include name="AddNewScreengRecord"/> 
 				 	
 				</methods>
-			</class>			
+			</class>		
+			
+				
 			
 			<class name="com.sail.qa.TestCases.UpdateExternalInspectionsRecordVerify">
 				<methods>
