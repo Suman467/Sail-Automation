@@ -23,13 +23,14 @@ variables:
   testngTest: "testSuites/01-sign-in-successfull.xml"
 
 before_script:
-  - apt-get update -qy
-  - apt-get install -y maven
+  - sudo apt-get update -qy
+  - sudo apt-get install -y maven
+  #- sudo apt-get install -y xvfb
 
 SignIN:
   stage: Test
-  image: maven:3.8.4-openjdk-11-slim
+  image: selenium/standalone-chrome:latest
   script:
-    - echo "Running TestNG Test Suite: ${testngTest}"
+    #- mvn clean test -DsuiteXmlFile=testSuites/01-sign-in-successfull.xml
+    #- echo "TestNG Test Suite: ${testngTest}"
     - mvn clean test -DsuiteXmlFile=${testngTest}
-
