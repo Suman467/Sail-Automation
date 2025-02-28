@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Admin Sign-in successfull And Create Preapartion VIQ7">
+<suite-files>
+
+<suite-file path="./TestCases/LogInLogOut/adminSignInDev2-TC.xml"> </suite-file>
+<suite-file path="./TestCases/Preparation/preparationVIQ7-TC.xml"></suite-file> 
+<suite-file path="./TestCases/LogInLogOut/tearDown-TC.xml"></suite-file>
+	
+</suite-files>		
+</suite> <!-- Suite -->

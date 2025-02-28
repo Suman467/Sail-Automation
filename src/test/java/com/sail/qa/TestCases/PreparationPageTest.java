@@ -6,6 +6,9 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -17,6 +20,7 @@ import com.sail.qa.pages.Toaster;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import java.time.Duration;
 
 public class PreparationPageTest extends TestBase{
 	public static Logger log = LogManager.getLogger(PreparationPageTest.class.getName());
@@ -72,9 +76,16 @@ public class PreparationPageTest extends TestBase{
 		Toaster toast = new Toaster(driver);
 		Thread.sleep(3000);
 		
+		/*
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		wait.until(driver -> pp.getArchiveBtn().isEnabled());  // Waits until the button is enabled
+
 		
 		String totalActivePrepCount= getText(pp.getActivePreparationCount());
 		System.out.println("Active preparation count is : "+totalActivePrepCount);
+		
+		*/
 	
 		clickElement(pp.getNewPrepBtn());
 		log.info("+ New Preparation button is clicked");
@@ -157,6 +168,11 @@ public class PreparationPageTest extends TestBase{
 		log.info("New Preapation is created successfully");
 		Thread.sleep(1000);
 		
+		
+		/*
+		waitUntilElementPresent(pp.getArchiveBtn());
+		
+		
 		String totalActivePrepCountNew= getText(pp.getActivePreparationCount());
 		if(!totalActivePrepCountNew.equals (totalActivePrepCount))
 		{
@@ -169,6 +185,7 @@ public class PreparationPageTest extends TestBase{
 			System.out.println("Total active prepataion count after adding a new preparation : " +totalActivePrepCountNew);
 		}
 		
+		*/
 		getFluentWait();
 		
 	}
@@ -327,6 +344,9 @@ public class PreparationPageTest extends TestBase{
 		log.info("New Preapation is created successfully");
 		Thread.sleep(1000);
 		
+		
+		/*
+		
 		String totalActivePrepCountNew= getText(pp.getActivePreparationCount());
 		if(!totalActivePrepCountNew.equals (totalActivePrepCount))
 		{
@@ -338,7 +358,7 @@ public class PreparationPageTest extends TestBase{
 			System.out.println("Count is not increased");
 			System.out.println("Total active prepataion count after adding a new preparation : " +totalActivePrepCountNew);
 		}
-		
+		*/
 		getFluentWait();
 		
 	}

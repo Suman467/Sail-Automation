@@ -29,7 +29,8 @@ public class PreparationPage {
 	@FindBy(xpath="//mat-card-subtitle[normalize-space()='PLANNED VESSELS']")
 	WebElement plannedText;
 	
-	@FindBy(xpath="//app-toolbar[@title='Preparation']//span[@class='mat-button-wrapper']")
+	//@FindBy(xpath="//app-toolbar[@title='Preparation']//span[@class='mat-button-wrapper']")
+	@FindBy(xpath="(//span/following::mat-icon[normalize-space()='add'])[2]")
 	WebElement newPrepBtn;
 	
 	@FindBy(xpath="div[title='Vessel'] span[role='columnheader']")
@@ -385,6 +386,7 @@ public class PreparationPage {
 			return inspFormly;
 		}
 		
+	
 		
 	
 	
