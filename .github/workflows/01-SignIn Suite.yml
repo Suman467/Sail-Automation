@@ -13,8 +13,7 @@ jobs:
 
     env:
       SUITE_1_PATH: testSuites/SignInSuites/01-sign-in-successfull.xml
-     # SUITE_2_PATH: testSuites/09-Create_Preparation.xml
-      # Add more suites as needed
+      # SUITE_2_PATH: testSuites/09-Create_Preparation.xml
 
     steps:
       - name: Checkout Repository
@@ -27,23 +26,17 @@ jobs:
           java-version: "17"
 
       - name: Set execute permissions for mvnw
-        run: |
-          chmod +x mvnw
-        working-directory: .  # Set to the root directory
+        run: chmod +x mvnw
 
       - name: Run TestNG Suites
-        working-directory: .  # Set to the root directory
-        run: |
-          ./mvnw test -Dsurefire.suiteXmlFiles=${SUITE_1_PATH}
-          # Add more suites using a comma-separated list
+        run: mvn test -Dsurefire.suiteXmlFiles=${SUITE_1_PATH}
 
       - name: Clear Maven Cache
-        run: |
-          mvn dependency:purge-local-repository
+        run: rm -rf ~/.m2/repository
 
       - name: Debug Information
         run: |
           echo "Current Directory: $(pwd)"
-          echo "Java Version: $(java -version)"
-          echo "Maven Version: $(mvn -version)"
+          java -version
+          mvn -version
           ls -la
