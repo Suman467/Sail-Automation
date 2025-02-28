@@ -91,10 +91,12 @@ public class LoginForMultipleClients {
         loginpage.getLogOut().click();  // Click logout
         System.out.println("Logout button is clicked");
         Thread.sleep(1000);
+        
+        /*
         loginpage.getUserName().clear();
         loginpage.getPassword().clear();
         loginpage.getDomainName().clear();
-        
+        */
         
         
     }
