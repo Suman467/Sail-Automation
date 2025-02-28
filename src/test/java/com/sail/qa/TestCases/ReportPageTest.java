@@ -17,7 +17,7 @@ public class ReportPageTest extends TestBase {
 	{
 		ReportPage report= new ReportPage(driver);
 		//driver.navigate().refresh();
-		getFluentWait();
+		Thread.sleep(3000);
 		js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", report.getReportTab());
 		//clickElement(report.getReportTab());

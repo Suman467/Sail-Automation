@@ -77,7 +77,7 @@ public class GeneratedReport {
 	WebElement fleetGrpBenchmark;
 	
 	
-	@FindBy(xpath="//div[contains(text(),'INSPECTION - Summary')]")
+	@FindBy(xpath="//div[contains(text(),' - Summary')]")
 	WebElement inspectionSummary;
 	
 	
@@ -88,10 +88,10 @@ public class GeneratedReport {
 	WebElement planTable;
 	
 
-	@FindBy(xpath="//div[contains(text(),'INSPECTION Performance - Top 20 Repeated Observation')]")
+	@FindBy(xpath="//div[contains(text(),'Performance - Top 20 Repeated Observation')]")
 	WebElement inspPerformanceTop20RepeatedObs;
 	
-	@FindBy(xpath="//div[contains(text(),'INSPECTION Performance - High Risk Observations')]")
+	@FindBy(xpath="//div[contains(text(),'Performance - High Risk Observations')]")
 	WebElement inspPerformanceHighRiskObs;
 	
 	@FindBy(xpath="//div[contains(text(),'INSPECTION Performance - Flagged Observations')]")
@@ -425,5 +425,119 @@ public class GeneratedReport {
 		  }
 	
 	
+	@FindBy(xpath="//*[name()='tspan' and contains (text(),'chapter Benchmark')]")
+	WebElement cdiChapBenchmark;
+
+	public WebElement getCdiChapBenchmark() {
+		return cdiChapBenchmark;
+	}
 	
+	// External Audit
+	
+	@FindBy(xpath="//*[name()='tspan' and contains (text(),'Deficiency Group ')]")
+	WebElement deficiencyBenchmark;
+	
+	@FindBy(xpath="//*[name()='tspan' and contains (text(),'Deficiency Group')]")
+	WebElement deficiencyGroup;
+	
+	@FindBy(xpath="//*[name()='tspan' and contains (text(),'Immediate Causes')]")
+	WebElement immediateCauses;
+	
+	@FindBy(xpath="//*[name()='tspan' and contains (text(),'Root Causes')]")
+	WebElement rootCauses;
+	
+	@FindBy(xpath="//div[normalize-space()='EXTERNAL AUDIT Findings']")
+	WebElement externalAuditFindings;
+	
+	@FindBy(xpath="//div[contains(text(),'AUDIT - Summary')]")
+	WebElement auditSummary;
+	
+	@FindBy(xpath="//div[contains(text(),'AUDIT - List of Audit')]")
+	WebElement listOfAudits;
+	
+	@FindBy(xpath="//div[contains(text(),'AUDIT Findings')]")
+	WebElement auditFindings;
+
+
+	public WebElement getDeficiencyGroup() {
+		return deficiencyGroup;
+	}
+
+
+
+	public WebElement getDeficiencyBenchmark() {
+		return deficiencyBenchmark;
+	}
+	
+	public WebElement getImmediateCauses() {
+		return immediateCauses;
+	}
+
+
+
+	public WebElement getRootCauses() {
+		return rootCauses;
+	}
+
+
+
+	public WebElement getExternalAuditFindings() {
+		return externalAuditFindings;
+	}
+	
+
+	public WebElement getAuditSummary() {
+		return auditSummary;
+	}
+
+
+
+	public WebElement getListOfAudits() {
+		return listOfAudits;
+	}
+
+
+
+	public WebElement getAuditFindings() {
+		return auditFindings;
+	}
+
+
+	//Flag State
+	
+	@FindBy(xpath="//*[name()='tspan' and contains(text(),'FLAG STATE')]")
+	WebElement flagStateGraph;
+	
+	@FindBy(xpath="//div[contains(text(),'INSPECTION Performance - All Observations')]")
+	WebElement allObservations;
+
+	public WebElement getAllObservations() {
+		return allObservations;
+	}
+
+
+
+	public WebElement getFlagStateGraph() {
+		return flagStateGraph;
+	}
+
+
+	// RISQ
+	
+	@FindBy(xpath="//*[name()='tspan' and contains (text(),'Chapters')]")
+	WebElement chapers;
+
+
+	public WebElement getChapers() {
+		return chapers;
+	}
+	
+	
+	// SIRE-TRIAL
+	@FindBy(xpath= "//div[contains(text(),'SIRE-Trial - Summary ')]")
+	WebElement sireTrialSummary;
+
+	public WebElement getSireTrialSummary() {
+		return sireTrialSummary;
+	}
 }

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- <suite name="Login Suite" parallel="tests" thread-count="4"> -->
+<suite name="Login Suite" parallel="none">
+
+    <!-- Listeners for capturing events during the test execution -->
+    <!-- 
+    
+    <listeners>
+        <listener class-name="com.sail.qa.resources.Listeners" />
+    </listeners>
+    
+     -->
+     
+     
+     
+    <!-- Parameters for login execution -->
+    <parameter name="browser" value="chrome" />
+    <parameter name="URL" value="https://dev2.sl-sail.com/" />
+	   
+    
+    
+   
+
+    <!-- Test cases for multiple clients -->
+    <test name="Login Test 1">
+     <parameter name="Email" value="itsupport" />
+	    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="Marantanker" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+    </test>
+  
+   
+    <test name="Login Test 2">
+    <parameter name="Email" value="itsupport" />
+    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="RSMS" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+    </test>
+    
+   
+    <test name="Login Test 3">
+    <parameter name="Email" value="itsupport" />
+    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="Super Eco" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+    </test>
+      
+
+    <test name="Login Test 4">
+    <parameter name="Email" value="itsupport" />
+    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="KOTC" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/> 
+        </classes>
+    </test>
+    
+   <!--
+    <test name="Login Test 5">
+    <parameter name="Email" value="itsupport" />
+    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="Landridge" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+    </test>
+    
+     <test name="Login Test 6">
+    <parameter name="Email" value="itsupport" />
+    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="Andriaki" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+        
+    </test>
+    
+    
+     <test name="Login Test 7">
+    <parameter name="Email" value="itsupport" />
+    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="Epic" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+    </test>
+    
+     <test name="Login Test 8">
+    <parameter name="Email" value="itsupport" />
+    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="MISCBHD" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+    </test>
+    
+     <test name="Login Test 9">
+    <parameter name="Email" value="itsupport" />
+    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="Interunity" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+    </test> 
+    
+   
+    <test name="Login Test 10">
+    <parameter name="Email" value="itsupport" />
+    <parameter name="Password" value="Admin@12345#" />
+    <parameter name="Domain" value="Wah Kwong" />
+        <classes>
+            <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+    </test>
+
+-->
+
+</suite>

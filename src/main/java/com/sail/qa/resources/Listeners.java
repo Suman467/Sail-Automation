@@ -19,7 +19,12 @@ public class Listeners extends TestBase implements ITestListener
 	{
 		test=extent.createTest(result.getMethod().getMethodName());
 	}
-	
+
+	public void onTestSuccess(ITestResult result) 
+	{
+		test.log(Status.PASS, "Successful");
+	}
+
 	public void onTestFailure(ITestResult result) 
 	{
 		test.fail(result.getThrowable());
@@ -27,7 +32,6 @@ public class Listeners extends TestBase implements ITestListener
 		try 
 		{
 			getScreenShot(testCaseName);
-			
 		} 
 		catch (IOException e) 
 		{
@@ -35,13 +39,6 @@ public class Listeners extends TestBase implements ITestListener
 			System.out.println("Exception is :"+e.getCause());
 		}
 	}
-
-	public void onTestSuccess(ITestResult result) 
-	{
-		test.log(Status.PASS, "Successful");
-	}
-
-	
 	
 	public void onFinish(ITestContext context) 
 	{

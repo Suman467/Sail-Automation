@@ -15,7 +15,8 @@ public class ReportPage {
 		PageFactory.initElements(rdriver, this);
 	}
 
-	@FindBy(xpath = "//span[normalize-space()='Report']")
+	//@FindBy(xpath = "//span[normalize-space()='Report']")
+	@FindBy(xpath="(//span[@class='mat-button-wrapper'])[9]")
 	WebElement reportTab;
 
 	@FindBy(xpath = "//div[normalize-space()='TIME PERIOD']")
@@ -135,8 +136,19 @@ public class ReportPage {
 	public WebElement getPsc() {
 		return psc;
 	}
+	
+	// Internal Audit
+	@FindBy(xpath = "//b[normalize-space()='Internal Audit']")
+	WebElement internalAudit;
+	
+	public WebElement getInternalAudit() {
+		return internalAudit;
+	}
 
 	// Navigation Audit
+
+
+	
 
 	@FindBy(xpath = "//b[normalize-space()='Navigation Audit']")
 	WebElement navAudit;
@@ -178,6 +190,10 @@ public class ReportPage {
 		return editSireIcon;
 	}
 
+	public WebElement selectReportName(String Report) {
+		WebElement rep_Name = ldriver.findElement(By.xpath("//b[normalize-space()='" + Report + "']"));
+	    return rep_Name;
+	}
 
 	
 

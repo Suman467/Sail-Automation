@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Admin SignIn Suite">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="SignIn successfully">
+
+		<!--Sign-in Inputs -->
+ 
+
+        <parameter name="browser" value="chrome" />
+
+        <!--   	<parameter name="execution" value="headless" />       --> 
+	   
+		<parameter name="URL" value="http://54.169.227.23:8080/login" />
+		<parameter name="Email" value="captain@antonisiangelicoussis.com" />
+		<parameter name="Password" value="pDTz&amp;X4" />
+
+		<parameter name="Domain" value="Marantanker" />
+
+		<classes>
+			<class name="com.sail.qa.TestCases.LoginPageTest">
+				<methods>
+					<include name="OfflineLogin" />
+				</methods>
+			</class>
+		</classes>	
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

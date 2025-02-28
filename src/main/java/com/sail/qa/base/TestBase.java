@@ -85,7 +85,8 @@ public class TestBase {
 	        options.setExperimentalOption("useAutomationExtension", false);
 	        options.addArguments("--disable-blink-features=AutomationControlled");
 	        
-
+	        
+	       
 	    } catch (Exception e) {
 	        log.error("Error during setup", e);
 	        throw e;

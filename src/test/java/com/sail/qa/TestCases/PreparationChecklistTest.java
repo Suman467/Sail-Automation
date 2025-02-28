@@ -18,8 +18,8 @@ import com.sail.qa.pages.Toaster;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 
-public class PreparationPageTest extends TestBase{
-	public static Logger log = LogManager.getLogger(PreparationPageTest.class.getName());
+public class PreparationChecklistTest extends TestBase{
+	public static Logger log = LogManager.getLogger(PreparationChecklistTest.class.getName());
 	
 	
 	@Test

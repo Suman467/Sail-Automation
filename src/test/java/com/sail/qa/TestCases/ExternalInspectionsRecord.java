@@ -42,14 +42,17 @@ public class ExternalInspectionsRecord extends TestBase {
 	    	    
 	    	
 		getFluentWait();
+		getFluentWait();
 		clickElement(history.getNewRecordButton());
 		System.out.println("+ New Record button is clicked");
 		log.info("+ New Record button is clicked");
 		
+		getFluentWait();
 		clickElement(history.getVesselDropdownList());
 		System.out.println("Vessel drop down is clicked");
 		log.info("Vessel drop down is clicked");
 		
+		getFluentWait();
 		clickElement(history.VesselFromDropdown(vesselName));
 		System.out.println("Vessel is selected");
 		log.info("Vessel is selected");
@@ -1369,6 +1372,8 @@ public class ExternalInspectionsRecord extends TestBase {
 		
 		getFluentWait();
 	}
+
+
 	
 
 }

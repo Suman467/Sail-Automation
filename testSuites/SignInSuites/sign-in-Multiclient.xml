@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SignInTestSuite" parallel="tests" thread-count="10">
+    <test name="SignInTest">
+    
+     
+    
+        <classes>
+              <class name="com.sail.qa.TestCases.LoginForMultipleClients"/>
+        </classes>
+    </test>
+</suite>

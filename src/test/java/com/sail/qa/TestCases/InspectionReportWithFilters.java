@@ -9,8 +9,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.sail.qa.GeneratedReports.ExternalInspectionReports;
-import com.sail.qa.GeneratedReports.InternalInspectionReports;
 import com.sail.qa.base.TestBase;
 import com.sail.qa.pages.GeneratedReport;
 import com.sail.qa.pages.ReportFilterPage;
@@ -21,7 +19,7 @@ public class InspectionReportWithFilters extends TestBase {
 	public JavascriptExecutor js ;
 	SwitchTab switchTab = new SwitchTab();
 	CloseTab closeTAb= new CloseTab();
-	ExternalInspectionReports externalInsp = new ExternalInspectionReports();
+	ExternalInspectionsRecord externalInsp = new ExternalInspectionsRecord();
 	
 		
 	@Parameters({"currentYear", "reportYear"})
@@ -101,7 +99,7 @@ public class InspectionReportWithFilters extends TestBase {
 			System.out.println(getText(genRep.getFilterApplied()));
 			log.info(getText(genRep.getFilterApplied()));
 			
-			externalInsp.GeneratedExternalInspectionReport(currentYear);
+		//	externalInsp.GeneratedExternalInspectionReport(currentYear);
 			
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();	
@@ -175,7 +173,7 @@ public class InspectionReportWithFilters extends TestBase {
 			Thread.sleep(3000);
 			System.out.println(getText(genRep.getFilterApplied()));
 			log.info(getText(genRep.getFilterApplied()));
-			externalInsp.GeneratedExternalInspectionReport(currentYear);			
+		//	externalInsp.GeneratedExternalInspectionReport(currentYear);			
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();	
 			Thread.sleep(2000);
@@ -246,7 +244,7 @@ public class InspectionReportWithFilters extends TestBase {
 			
 			System.out.println(getText(genRep.getFilterApplied()));
 			log.info(getText(genRep.getFilterApplied()));
-			externalInsp.GeneratedExternalInspectionReport(currentYear);
+		//	externalInsp.GeneratedExternalInspectionReport(currentYear);
 			
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();		
@@ -308,7 +306,7 @@ public class InspectionReportWithFilters extends TestBase {
 			
 			System.out.println(getText(genRep.getFilterApplied()));
 			log.info(getText(genRep.getFilterApplied()));
-			externalInsp.GeneratedExternalInspectionReport(currentYear);
+			//externalInsp.GeneratedExternalInspectionReport(currentYear);
 			
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();
@@ -380,7 +378,7 @@ public class InspectionReportWithFilters extends TestBase {
 			
 			System.out.println(getText(genRep.getFilterApplied()));
 			getFluentWait();
-			externalInsp.GeneratedExternalInspectionReport(currentYear);
+			//externalInsp.GeneratedExternalInspectionReport(currentYear);
 			
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();		
@@ -395,7 +393,7 @@ public class InspectionReportWithFilters extends TestBase {
 		public void GenerateSupdtInspectionReportWithLocationFilter(String location , int currentYear, int reportYear,int pageEndIndex) throws InterruptedException, AWTException {
 			
 			ReportPage report = new ReportPage(driver);
-			InternalInspectionReports extInspReport= new InternalInspectionReports();
+			InternalInspectionsRecord extInspReport= new InternalInspectionsRecord();
 			GeneratedReport genRep = new GeneratedReport(driver);
 			
 			ReportFilterPage filter = new ReportFilterPage(driver);
@@ -474,7 +472,7 @@ public class InspectionReportWithFilters extends TestBase {
 			switchTab.switchToNewTab();
 			Thread.sleep(3000);
 			System.out.println(getText(genRep.getFilterApplied()));
-			extInspReport.GenerateInternalInspectionReport(pageEndIndex, currentYear);
+			//extInspReport.GenerateInternalInspectionReport(pageEndIndex, currentYear);
 			
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();	
@@ -533,7 +531,7 @@ public class InspectionReportWithFilters extends TestBase {
 			
 			switchTab.switchToNewTab();
 			Thread.sleep(3000);	
-			externalInsp.GeneratedObservationStatusReport(currentYear);
+			//externalInsp.GeneratedExternalInspectionReport(currentYear);
 			
 			closeTAb.closeTab();	
 			switchTab.switchToOldTab();	

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Admin SignIn Suite" >
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="SignIn successfully">
+
+		<!--Sign-in Inputs -->
+ 
+
+
+
+        <!--   	<parameter name="execution" value="headless" />       
+	  <parameter name="browser" value="chrome" />
+		  <parameter name="URL" value="https://sailerp.sl-sail.com/" />
+		-->
+		
+		<parameter name="url" value="https://dev2.sl-sail.com/" />
+		
+		<!-- 
+		<parameter name="Email" value="support@sl-sail.com" />
+		<parameter name="Password" value="sl@34jh@34$r%" />
+		<parameter name="Domain1" value="RSMS" />
+		<parameter name="Domain2" value="Marantanker" />
+		<parameter name="Domain3" value="Super Eco" />
+		<parameter name="Domain4" value="KOTC" />
+		<parameter name="Domain5" value="Landbridge" />
+		<parameter name="Domain6" value="Andriaki" />
+		<parameter name="Domain7" value="Epic" />
+		<parameter name="Domain8" value="MISCBHD" />
+		<parameter name="Domain9" value="Interunity" />
+		<parameter name="Domain10" value="Wah Kwong" />
+		<parameter name="Domain11" value="Oceangold" />
+		<parameter name="Domain12" value="Estoril" />
+		<parameter name="Domain13" value="Pacctanker" />
+		<parameter name="Domain14" value="Almi" />
+		<parameter name="Domain15" value="OSM" /> 
+		
+		 -->
+		 
+		 
+		 
+		<parameter name="Email" value="support@sl-sail.com" />
+		<parameter name="Password" value="sl@34jh@34$r%" />
+		<parameter name="Domain1" value="RSMS" />
+		<parameter name="Domain2" value="Marantanker" />
+		<parameter name="Domain3" value="osmuat" />
+		<parameter name="Domain4" value="KOTC" />
+		<parameter name="Domain5" value="Landbridge" />
+		<parameter name="Domain6" value="Andriaki" />
+		<parameter name="Domain7" value="Epic" />
+		<parameter name="Domain8" value="MISCBHD" />
+		<parameter name="Domain9" value="Interunity" />
+		<parameter name="Domain10" value="Wah Kwong" />
+		<parameter name="Domain11" value="Oceangold" />
+		<parameter name="Domain12" value="Estoril" />
+		<parameter name="Domain13" value="Pacctanker" />
+		<parameter name="Domain14" value="Almi" />
+		<parameter name="Domain15" value="OSM" />
+
+		<classes>
+			<class name="com.sail.qa.TestCases.LoginForMultipleClients2"/>
+				
+				
+		</classes>	
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -10,25 +10,29 @@ public class LoginPage {
 	//PageFactory
 	
 	
-	WebDriver ldriver;
+	WebDriver driver;
 
-	public LoginPage(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public LoginPage(WebDriver driver) {
+		driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 	
 	@FindBy(xpath="//div[@class='front']//img[@alt='Logo']")
 	WebElement logo;
 
-	@FindBy(xpath= "//input[@id='mat-input-0']")
+	@FindBy(xpath= "(//input[@placeholder='Username'])[1]")
 	WebElement userName ;
 	
-	@FindBy(xpath="//input[@id='mat-input-1']")
+	@FindBy(xpath="(//input[@placeholder='Password'])[1]")
 	WebElement password ;
 	
-	@FindBy(xpath="//input[@id='mat-input-2']")
+	@FindBy(xpath="(//input[@placeholder='Domain'])[1]")
 	WebElement domainName;
 	
+	@FindBy(xpath="(//input[@placeholder='Captcha'])[1]")
+	WebElement captcha;
+	
+
 	@FindBy(xpath="(//button[@type='submit'])[1]")
 	WebElement submitBtn;
 	
@@ -68,6 +72,10 @@ public class LoginPage {
 
 	public WebElement getDomainName() {
 		return domainName;
+	}
+
+	public WebElement getCaptcha() {
+		return captcha;
 	}
 
 	public WebElement getSubmitBtn() {
@@ -113,6 +121,80 @@ public class LoginPage {
 	@FindBy(xpath="(//input[@id='mat-slide-toggle-1-input'])[1]")
 	WebElement toggleBtnState;
 	
+	
+	@FindBy(xpath="//input[@placeholder='Enter OTP']")
+	WebElement optPage;
+	
+	@FindBy(xpath="(//button[@type='submit'])[1]")
+	WebElement submitOTP;
+
+	public WebElement getSubmitOTP() {
+		return submitOTP;
+	}
+
+	public WebElement getInvalidDeatils() {
+		return invalidDeatils;
+	}
+
+	public WebElement getRemeberToggleBtn() {
+		return remeberToggleBtn;
+	}
+
+	public WebElement getToggleBtnState() {
+		return toggleBtnState;
+	}
+
+	public WebElement getOptPage() {
+		return optPage;
+	}
+	
+	@FindBy(xpath="//div[@class='profile-image ng-star-inserted']")
+    WebElement userprofile;	
+	
+	
+	@FindBy(xpath="//button[normalize-space()='Logout']")
+	WebElement logOut;
+
+	public WebElement getUserprofile() {
+		return userprofile;
+	}
+
+	public WebElement getLogOut() {
+		return logOut;
+	}
+	
+	
+	@FindBy(xpath="(//div[@class='login-error ng-star-inserted'][normalize-space()='Incorrect captcha. Please try again.'])[1]")
+	WebElement incorrectCaptcha;
+	
+	
+
+	public WebElement getIncorrectCaptcha() {
+		return incorrectCaptcha;
+	}
+	
+	@FindBy(xpath="//div[@class='confirmation-content ng-star-inserted']")
+	WebElement confirmationPopUp;
+	
+	
+	@FindBy(xpath="//span[contains(text(),'Proceed')]")
+	WebElement proceed;
+	
+	
+	@FindBy(xpath="//mat-dialog-container[@id='mat-dialog-0']")
+	WebElement conformationPopUpDialogBox;
+	
+	public WebElement getConformationPopUpDialogBox() {
+		return conformationPopUpDialogBox;
+	}
+
+	public WebElement getConfirmationPopUp() {
+		return confirmationPopUp;
+	}
+
+	public WebElement getProceed() {
+		return proceed;
+	}
 
 	
 }

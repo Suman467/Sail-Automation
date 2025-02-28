@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Generate Report">
+
+	<listeners>
+		<listener class-name="com.sail.qa.resources.Listeners" />
+	</listeners>
+
+	<test name="Generate Report  ">
+	
+	<parameter name="currentYear" value="2024"/>
+	<parameter name="reportYear" value="2024"/>
+	<parameter name="reportName1" value="SIRE"/>
+	<parameter name="reportName2" value="NON-SIRE"/>
+	<parameter name="reportName3" value="CDI"/>
+	<parameter name="reportName4" value="Terminal"/>
+	<parameter name="reportName5" value="PSC"/>
+	<parameter name="reportName6" value ="External Audit"/>
+	<parameter name="reportName7" value ="Flag State"/>
+    <parameter name="reportName8" value ="RISQ"/>
+    <parameter name="reportName9" value ="SIRE-TRIAL"/>
+
+
+		<classes>			
+			<class name="com.sail.qa.TestCases.ExternalInspectionReport">
+				<methods>
+				     <include name="GenerateSireReport"/>
+				     <include name="GenerateNonSireReport"/> 
+					  <include name="GenerateCDIReport"/>   
+					  <include name="GenerateTerminalReport"/>
+					  <include name="GeneratePSCReport"/>
+					  <include name="GenerateExternalAuditReport"/>
+					  <include name="GenerateFlagStateReport"/>
+					  <include name="GenerateRISQReport"/>
+					  <include name="GenerateSireTrialReport"/>
+					  
+					  
+					  
+					  
+					   
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

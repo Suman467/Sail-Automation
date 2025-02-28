@@ -6,6 +6,9 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class ExtentReport {
 
 	static ExtentReports extent;
+	
+	
+	
 	public static ExtentReports extentReportGenertor()
 	{
 		//ExtentReports- class which is responsible to drive all the reporting execution
@@ -20,6 +23,11 @@ public class ExtentReport {
 		return extent;
 			
 		}
+		
+		
+		
+	
+	
 	}
 
 

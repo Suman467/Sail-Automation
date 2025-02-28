@@ -1,5 +1,9 @@
 package com.sail.qa.pages;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -52,6 +56,9 @@ public class PreparationPage {
 
 	@FindBy(xpath="//span[contains(text(),'Select Vessel')]")
 	WebElement selectVesesl;
+	
+	@FindBy(xpath="(//span[normalize-space()='SIRE'])[1]")
+	WebElement selectInspection;
 	
 	@FindBy(xpath="//mat-option[@role='option']")
 	WebElement vesselList;
@@ -149,11 +156,13 @@ public class PreparationPage {
 		return closeBtn;
 	}
 
-	public WebElement selectVeseslFromDropdown(int indexToSelectVessel) {
-        WebElement vesselList = ldriver.findElement(By.xpath("(//mat-option[@role='option'])[" + indexToSelectVessel + "]"));
+	public WebElement selectVeseslFromDropdown(String VesselName ) {
+        WebElement vesselList = ldriver.findElement(By.xpath("//span[normalize-space() = '" + VesselName + "']"));
 		return vesselList;
        
     }
+	
+	
 	
 	 public WebElement selectViqVersion(String indexOfViqVersion) {
 		 WebElement viqVersion = ldriver.findElement(By.xpath("(//span[@class='mat-option-text'])[" + indexOfViqVersion + "]"));
@@ -300,7 +309,83 @@ public class PreparationPage {
 		}
 
 				
+		public static String getStartDateOfPreparation() {
+	        Date currentDate = new Date();
+	        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH);
+	        return dateFormat.format(currentDate);
+	    }
 
+		
+		public  WebElement getCurrentStartDate()
+		{
+			 WebElement sDate = ldriver.findElement(By.xpath("//div[normalize-space() = '" + getStartDateOfPreparation() + "']"));
+				return sDate;
+		}
+	
+		@FindBy(xpath="//div[@aria-colindex= '3']")
+		WebElement getDateText;
+
+		public WebElement getGetDateText() {
+			return getDateText;
+		}
+		
+		@FindBy(xpath="//div[@class='checklist-lable ng-star-inserted']")
+		WebElement checklistTitle;
+
+		public WebElement getChecklistTitle() {
+			return checklistTitle;
+		}
+		
+
+		// Risq
+		
+		public WebElement selectInspectionFromDropdown(String InspectionName ) {
+	        WebElement vesselList = ldriver.findElement(By.xpath("//span[normalize-space() = '" + InspectionName + "']"));
+			return vesselList;
+	       
+	    }
+		
+		@FindBy(xpath="//span[normalize-space()='RISQ Group']")
+		WebElement risqGroup;
+		
+		public WebElement selectRisqGrp(String risqGroup) {
+	        WebElement risqGroupElement = ldriver.findElement(By.xpath("//span[normalize-space() = '" + risqGroup + "']"));
+			return risqGroupElement;
+	        
+	    }
+		
+		@FindBy(xpath="//div[@class='ng-select-container ng-has-value']//input[@role='combobox']")
+		WebElement inspector;
+		
+		@FindBy(xpath="(//formly-wrapper-mat-form-field)[5]")
+		WebElement inspFormly;
+		
+		public WebElement selectInspector(int indexToSelectInspector) {
+			WebElement inspectorName = ldriver.findElement(By.xpath("(//span[@class='ng-option-label ng-star-inserted'])[" + indexToSelectInspector + "]"));
+			return inspectorName;
+		}
+
+
+		public WebElement getSelectInspection() {
+			return selectInspection;
+		}
+
+
+		public WebElement getRisqGroup() {
+			return risqGroup;
+		}
+
+
+		public WebElement getInspector() {
+			return inspector;
+		}
+
+
+		public WebElement getInspFormly() {
+			return inspFormly;
+		}
+		
+		
 	
 	
 }
