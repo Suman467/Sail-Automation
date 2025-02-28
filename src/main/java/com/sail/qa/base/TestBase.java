@@ -93,6 +93,7 @@ public class TestBase {
 	    }
 	}
 
+	/*
 	private void setupChromeDriver(String os, boolean isHeadlessExecution, ChromeOptions options) {
 	    if (os.contains("nix") || os.contains("nux") || os.contains("aix"))
 	        WebDriverManager.chromedriver().operatingSystem(OperatingSystem.LINUX).setup();
@@ -143,7 +144,33 @@ public class TestBase {
 	   
 	}
 	        
-	        
+	*/
+	
+	private void setupChromeDriver(String os, boolean isHeadlessExecution, ChromeOptions options) {
+        WebDriverManager.chromedriver().setup();
+
+        // Use a unique user-data-dir to prevent conflicts
+        String userDataDir = System.getProperty("java.io.tmpdir") + "/chrome-user-data-" + System.currentTimeMillis();
+        options.addArguments("--user-data-dir=" + userDataDir);
+        options.addArguments("--disable-extensions");
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-blink-features=AutomationControlled");
+
+        if (isHeadlessExecution) {
+            options.addArguments("--headless");
+        }
+
+        driver = new ChromeDriver(options);
+    }
+
+    private void setupEdgeDriver(String os, ChromeOptions options) {
+        WebDriverManager.edgedriver().setup();
+        EdgeOptions edgeOptions = new EdgeOptions();
+        driver = new EdgeDriver(edgeOptions);
+        log.info("Edge driver is initialized");
+    }
 	 
 	 
 	
