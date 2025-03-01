@@ -24,6 +24,16 @@ jobs:
         with:
           distribution: "adopt"
           java-version: "17"
+
+          - name: Install Latest Chrome
+        run: |
+          sudo apt update
+          sudo apt install -y google-chrome-stable
+
+      - name: Kill Existing Chrome Processes
+        run: |
+          pkill -9 chrome || true
+          rm -rf /tmp/chrome-profile || true
           
       - name: Set execute permissions for mvnw
         run: chmod +x mvnw
