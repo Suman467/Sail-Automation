@@ -14,7 +14,7 @@
 
           <parameter name="browser" value="chrome" />  
 
-            <!-- 	<parameter name="execution" value="headless" />       -->
+            <parameter name="execution" value="headless" />      
 	   
 		<parameter name="URL" value="https://dev2.sl-sail.com/login" />
 		<parameter name="Email" value="support@sl-sail.com" />

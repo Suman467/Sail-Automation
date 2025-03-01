@@ -145,8 +145,17 @@ public class TestBase {
 	        
 	*/
 	
+	@SuppressWarnings("deprecation")
 	private void setupChromeDriver(String os, boolean isHeadlessExecution, ChromeOptions options) {
         WebDriverManager.chromedriver().setup();
+        
+        try {
+            Runtime.getRuntime().exec("pkill -9 chrome || true");
+            Thread.sleep(3000); // Give it a moment to ensure processes are terminated
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
         // Use a unique user-data-dir to prevent conflicts
         String userDataDir = System.getProperty("java.io.tmpdir") + "/chrome-user-data-" + System.currentTimeMillis();
