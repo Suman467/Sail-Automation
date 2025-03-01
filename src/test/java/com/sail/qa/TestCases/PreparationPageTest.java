@@ -186,12 +186,13 @@ public class PreparationPageTest extends TestBase{
 		}
 		
 		*/
-		getFluentWait();
+		Thread.sleep(2000);
+		
 		
 	}
 	
 	
-	@SuppressWarnings("unlikely-arg-type")
+	
 	@Test	
 	public void findPreparation() throws InterruptedException
 	{

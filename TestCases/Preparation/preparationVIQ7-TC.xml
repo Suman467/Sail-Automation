@@ -21,7 +21,7 @@
 				<methods>
 					<include name="verifyPrepPage" />
 			    	 <include name="addNewPreparation"/>  
-				<!-- 	<include name="findPreparation"/> -->
+				
 				</methods>
 			</class>
 		</classes>
