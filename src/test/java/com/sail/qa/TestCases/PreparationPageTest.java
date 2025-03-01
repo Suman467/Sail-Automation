@@ -166,7 +166,7 @@ public class PreparationPageTest extends TestBase{
 		System.out.println(getText(toast.getToaster()) +"is dispakyed");
 		System.out.println("New Preapation is created successfully");
 		log.info("New Preapation is created successfully");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		
 		
 		/*

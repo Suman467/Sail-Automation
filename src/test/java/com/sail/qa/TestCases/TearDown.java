@@ -14,6 +14,9 @@ public class TearDown extends TestBase {
 	@Test
     public void tearDown(@Optional() String Domain) {
            // if (driver != null) {
+		
+		getFluentWait();
+		
 		LoginPage lp= new LoginPage(driver);
 		clickElement(lp.getUserprofile());
 		System.out.println("User profile is open");

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.sun.org.apache.xpath.internal.operations.Div;
+
 public class LoginPage {
 	
 	//PageFactory
@@ -148,7 +150,8 @@ public class LoginPage {
 		return optPage;
 	}
 	
-	@FindBy(xpath="//div[@class='profile-image ng-star-inserted']")
+	//@FindBy(xpath="//div[@class='profile-image ng-star-inserted']")
+	@FindBy(css = "div.profile-image.ng-star-inserted")
     WebElement userprofile;	
 	
 	
